@@ -1,0 +1,78 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "iot-projekt",
+    "description": "",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/devices": {},
+    "/devices/{id}": {
+      "get": {
+        "summary": "change request",
+        "description": "kontrola ci bola provedene zmena v settingoch",
+        "responses": {
+          "200": {
+            "description": "some changis?",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemasgatheredData"
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ]
+    }
+  },
+  "components": {
+    "schemas": {
+      "gatheredData": {
+        "title": "Root Type for gatheredData",
+        "description": "The root of the gatheredData type's schema.",
+        "type": "object",
+        "properties": {
+          "temperature": {
+            "format": "double",
+            "type": "number"
+          },
+          "usedAmps": {
+            "format": "double",
+            "type": "number"
+          },
+          "light": {
+            "format": "int32",
+            "type": "integer"
+          },
+          "movement": {
+            "type": "boolean"
+          }
+        }
+      }
+    }
+  }
+}
