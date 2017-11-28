@@ -7327,3 +7327,112 @@ Caused by: java.lang.NoSuchMethodError: org.hibernate.engine.spi.SessionFactoryI
 2017-11-19 12:15:29.137  INFO 8432 --- [RMI TCP Connection(7)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3b2cf7ab: startup date [Sun Nov 19 12:15:16 CET 2017]; root of context hierarchy
 2017-11-19 12:15:29.138  INFO 8432 --- [RMI TCP Connection(7)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
 2017-11-19 12:15:29.140  INFO 8432 --- [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-11-28 17:00:44.717  INFO 2724 --- [main] iot.fei.IotApplication                   : Starting IotApplication on jura-main with PID 2724 (C:\Users\juraj\Dropbox\projekt\iot-projekt\target\classes started by juraj in C:\Users\juraj\Dropbox\projekt\iot-projekt)
+2017-11-28 17:00:44.802  INFO 2724 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2017-11-28 17:00:45.003  INFO 2724 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3b2cf7ab: startup date [Tue Nov 28 17:00:44 CET 2017]; root of context hierarchy
+2017-11-28 17:00:47.628  INFO 2724 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-28 17:00:48.842  INFO 2724 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2017-11-28 17:00:48.855  INFO 2724 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-28 17:00:48.856  INFO 2724 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-28 17:00:49.327  INFO 2724 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-28 17:00:49.328  INFO 2724 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 4415 ms
+2017-11-28 17:00:49.484  INFO 2724 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-28 17:00:49.488  INFO 2724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-28 17:00:49.542  INFO 2724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-28 17:00:49.543  INFO 2724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-28 17:00:49.543  INFO 2724 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-28 17:00:53.120  INFO 2724 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-11-28 17:00:58.656  INFO 2724 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-11-28 17:01:00.773  INFO 2724 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3b2cf7ab: startup date [Tue Nov 28 17:00:44 CET 2017]; root of context hierarchy
+2017-11-28 17:01:00.873  INFO 2724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.getDeviceInfo(java.lang.Long,java.lang.String)
+2017-11-28 17:01:00.875  INFO 2724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/log-in],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.accountLogIn(iot.fei.client.CSLogIn)
+2017-11-28 17:01:00.875  INFO 2724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[DELETE]}" onto public boolean iot.fei.controller.AccountController.deleteAccount(java.lang.Long)
+2017-11-28 17:01:00.875  INFO 2724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[GET]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.getAccount(java.lang.Long)
+2017-11-28 17:01:00.876  INFO 2724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.createAccount(iot.fei.client.CSAccount)
+2017-11-28 17:01:00.876  INFO 2724 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String)
+2017-11-28 17:01:00.877  WARN 2724 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'accountController' method 
+public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.setOptionsForPlug(java.lang.Long,java.lang.String,iot.fei.client.CSPlug)
+to {[/accounts/{id}/devices/{device-id}],methods=[POST]}: There is already 'accountController' bean method
+public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String) mapped.
+2017-11-28 17:01:00.878  INFO 2724 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2017-11-28 17:01:00.885  INFO 2724 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2017-11-28 17:01:01.081  INFO 2724 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2017-11-28 17:01:01.157 ERROR 2724 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'accountController' method 
+public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.setOptionsForPlug(java.lang.Long,java.lang.String,iot.fei.client.CSPlug)
+to {[/accounts/{id}/devices/{device-id}],methods=[POST]}: There is already 'accountController' bean method
+public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at iot.fei.IotApplication.main(IotApplication.java:12) [classes/:na]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'accountController' method 
+public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.setOptionsForPlug(java.lang.Long,java.lang.String,iot.fei.client.CSPlug)
+to {[/accounts/{id}/devices/{device-id}],methods=[POST]}: There is already 'accountController' bean method
+public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:576) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:540) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:264) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:250) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:214) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:184) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:127) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 16 common frames omitted
+
+2017-11-28 17:03:47.391  INFO 11976 --- [main] iot.fei.IotApplication                   : Starting IotApplication on jura-main with PID 11976 (C:\Users\juraj\Dropbox\projekt\iot-projekt\target\classes started by juraj in C:\Users\juraj\Dropbox\projekt\iot-projekt)
+2017-11-28 17:03:47.391  INFO 11976 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2017-11-28 17:03:47.437  INFO 11976 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3b2cf7ab: startup date [Tue Nov 28 17:03:47 CET 2017]; root of context hierarchy
+2017-11-28 17:03:48.187  INFO 11976 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2017-11-28 17:03:48.596  INFO 11976 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2017-11-28 17:03:48.667  INFO 11976 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2017-11-28 17:03:48.667  INFO 11976 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2017-11-28 17:03:48.864  INFO 11976 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2017-11-28 17:03:48.864  INFO 11976 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1427 ms
+2017-11-28 17:03:48.996  INFO 11976 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2017-11-28 17:03:48.999  INFO 11976 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2017-11-28 17:03:49.000  INFO 11976 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2017-11-28 17:03:49.000  INFO 11976 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2017-11-28 17:03:49.000  INFO 11976 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2017-11-28 17:03:49.626  INFO 11976 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2017-11-28 17:03:50.787  INFO 11976 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2017-11-28 17:03:51.374  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3b2cf7ab: startup date [Tue Nov 28 17:03:47 CET 2017]; root of context hierarchy
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[POST]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.setOptionsForPlug(java.lang.Long,java.lang.String,iot.fei.client.CSPlug)
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.createAccount(iot.fei.client.CSAccount)
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[GET]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.getAccount(java.lang.Long)
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[DELETE]}" onto public boolean iot.fei.controller.AccountController.deleteAccount(java.lang.Long)
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.getDeviceInfo(java.lang.Long,java.lang.String)
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/log-in],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.accountLogIn(iot.fei.client.CSLogIn)
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/register],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String)
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices],methods=[GET]}" onto public java.util.List<java.lang.String> iot.fei.controller.AccountController.getAccountDeviceData(java.lang.Long)
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.DeviceController.getDeviceData(java.lang.String)
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[POST]}" onto public void iot.fei.controller.DeviceController.createGatheredData(java.lang.String,iot.fei.client.CSGatheredData)
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-11-28 17:03:51.437  INFO 11976 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-11-28 17:03:51.586  INFO 11976 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-28 17:03:51.586  INFO 11976 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-28 17:03:51.905  INFO 11976 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-11-28 17:03:53.142  INFO 11976 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2017-11-28 17:03:53.786  INFO 11976 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8081 (http)
+2017-11-28 17:03:53.786  INFO 11976 --- [main] iot.fei.IotApplication                   : Started IotApplication in 6.589 seconds (JVM running for 7.225)
+2017-11-28 17:03:59.295  INFO 11976 --- [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2017-11-28 17:03:59.310  INFO 11976 --- [RMI TCP Connection(6)-127.0.0.1] ationConfigEmbeddedWebApplicationContext : Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3b2cf7ab: startup date [Tue Nov 28 17:03:47 CET 2017]; root of context hierarchy
+2017-11-28 17:03:59.311  INFO 11976 --- [RMI TCP Connection(6)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2017-11-28 17:03:59.311  INFO 11976 --- [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'

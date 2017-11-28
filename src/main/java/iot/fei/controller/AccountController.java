@@ -1,5 +1,7 @@
 package iot.fei.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,6 +14,7 @@ import iot.fei.client.CSAccount;
 import iot.fei.client.CSDeviceData;
 import iot.fei.client.CSLogIn;
 import iot.fei.client.CSPlug;
+import iot.fei.controller.configuration.PathConfiguration;
 import iot.fei.core.service.AccountService;
 import iot.fei.mapper.AccountMapper;
 import iot.fei.mapper.DeviceMapper;
@@ -59,12 +62,12 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES, method = RequestMethod.GET)
-	public @ResponseBody CSDeviceData getAccountDeviceData(@PathVariable("id") Long id) {
-		return null;
+	public @ResponseBody List<String> getAccountDeviceData(@PathVariable("id") Long id) {
+		return accountService.getDeviceListForAccount(id);
 	}
 
-	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID, method = RequestMethod.POST)
-	public @ResponseBody CSDeviceData registerDeviceForAccount(@PathVariable("id") Long id, @PathVariable("device-id") String deviceId) {
-		return null;
+	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.REGISTER, method = RequestMethod.POST)
+	public @ResponseBody CSAccount registerDeviceForAccount(@PathVariable("id") Long id, @PathVariable("device-id") String deviceId) {
+		return accountMapper.mapAsCSAccount(accountService.registerDeviceToAccount(id));
 	}
 }

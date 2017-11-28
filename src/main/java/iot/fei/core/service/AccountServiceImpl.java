@@ -1,5 +1,7 @@
 package iot.fei.core.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import iot.fei.client.CSPlug;
@@ -43,6 +45,18 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public Plug setOptionsForPlug(CSPlug plug) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<String> getDeviceListForAccount(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Account registerDeviceToAccount(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

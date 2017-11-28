@@ -1,5 +1,7 @@
 package iot.fei.core.service;
 
+import java.util.List;
+
 import iot.fei.client.CSPlug;
 import iot.fei.core.domain.Account;
 import iot.fei.core.domain.DeviceData;
@@ -19,4 +21,8 @@ public interface AccountService {
 	DeviceData getDeviceData(Long id, String deviceId);
 
 	Plug setOptionsForPlug(CSPlug plug);
+
+	List<String> getDeviceListForAccount(Long id);
+
+	Account registerDeviceToAccount(Long id);
 }

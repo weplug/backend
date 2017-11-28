@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import iot.fei.client.CSDeviceData;
 import iot.fei.client.CSGatheredData;
+import iot.fei.controller.configuration.PathConfiguration;
 import iot.fei.core.service.DeviceService;
 import iot.fei.mapper.DeviceMapper;
 
