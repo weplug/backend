@@ -68,6 +68,6 @@ public class AccountController {
 
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.REGISTER, method = RequestMethod.POST)
 	public @ResponseBody CSAccount registerDeviceForAccount(@PathVariable("id") Long id, @PathVariable("device-id") String deviceId) {
-		return accountMapper.mapAsCSAccount(accountService.registerDeviceToAccount(id));
+		return accountMapper.mapAsCSAccount(accountService.registerDeviceToAccount(id, deviceId));
 	}
 }

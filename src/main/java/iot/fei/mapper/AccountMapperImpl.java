@@ -31,14 +31,12 @@ public class AccountMapperImpl implements AccountMapper {
 
 	@Override
 	public Account mapAsAccount(CSAccount account) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.map(account, Account.class);
 	}
 
 	@Override
 	public CSAccount mapAsCSAccount(Account createAccount) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.map(createAccount, CSAccount.class);
 	}
 
 	@Override

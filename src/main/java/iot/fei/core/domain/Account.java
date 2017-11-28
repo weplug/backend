@@ -1,5 +1,6 @@
 package iot.fei.core.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -30,7 +31,7 @@ public class Account {
 
 	@Column
 	@OneToMany(mappedBy = "account", cascade = CascadeType.ALL)
-	private List<DeviceData> devices;
+	private List<DeviceData> devices = new ArrayList<>();
 
 	public Account() {
 		super();

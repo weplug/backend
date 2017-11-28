@@ -24,5 +24,5 @@ public interface AccountService {
 
 	List<String> getDeviceListForAccount(Long id);
 
-	Account registerDeviceToAccount(Long id);
+	Account registerDeviceToAccount(Long id, String deviceId);
 }
