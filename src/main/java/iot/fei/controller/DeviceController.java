@@ -1,32 +1,34 @@
 package iot.fei.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import iot.fei.core.domain.DataLogs;
-import iot.fei.core.service.DataLogsService;
+import iot.fei.client.CSDeviceData;
+import iot.fei.client.CSGatheredData;
+import iot.fei.core.service.DeviceService;
+import iot.fei.mapper.DeviceMapper;
 
 @Controller
 @RequestMapping("/devices")
 public class DeviceController {
 	@Autowired
-	DataLogsService dataLogsService;
+	DeviceService deviceService;
 
-	@RequestMapping(method = RequestMethod.POST)
-	public @ResponseBody DataLogs createDL(@RequestBody DataLogs dl) {
-		return dataLogsService.createDataLogs(dl);
+	@Autowired
+	DeviceMapper deviceMapper;
+
+	@RequestMapping(value = PathConfiguration.DEVICE_ID, method = RequestMethod.POST)
+	public @ResponseBody void createGatheredData(@PathVariable("device-id") String id, @RequestBody CSGatheredData gData) {
+		deviceService.createGatheredData(deviceMapper.mapGatheredData(gData), id);
 	}
 
-	@CrossOrigin
-	@RequestMapping(method = RequestMethod.GET)
-	public @ResponseBody List<DataLogs> getAllDL() {
-		return dataLogsService.getAllDataLogs();
+	@RequestMapping(value = PathConfiguration.DEVICE_ID, method = RequestMethod.GET)
+	public @ResponseBody CSDeviceData getDeviceData(@PathVariable("device-id") String id) {
+		return deviceMapper.mapCSDeviceData(deviceService.getOptionsDataForDevice(id));
 	}
 }

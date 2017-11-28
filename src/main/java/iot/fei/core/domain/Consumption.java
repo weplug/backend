@@ -1,6 +1,5 @@
 package iot.fei.core.domain;
 
-import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Column;
@@ -8,25 +7,44 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotNull;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
-public class DataLogs implements Serializable {
-	private static final long serialVersionUID = -3846932714628990949L;
-
+public class Consumption {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id;
 
-	@NotNull
 	@Column
-	float temp;
+	private Float consume = null;
 
 	@Column
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	LocalDateTime date = LocalDateTime.now();
+
+	@ManyToOne
+	@JoinColumn(name = "plug_id")
+	private Plug plug;
+
+	public Consumption() {
+		super();
+	}
+
+	public Consumption(Float consume) {
+		super();
+		this.consume = consume;
+	}
+
+	public Plug getPlug() {
+		return plug;
+	}
+
+	public void setPlug(Plug plug) {
+		this.plug = plug;
+	}
 
 	public Long getId() {
 		return id;
@@ -36,12 +54,12 @@ public class DataLogs implements Serializable {
 		this.id = id;
 	}
 
-	public float getTemp() {
-		return temp;
+	public Float getConsume() {
+		return consume;
 	}
 
-	public void setTemp(float temp) {
-		this.temp = temp;
+	public void setConsume(Float consume) {
+		this.consume = consume;
 	}
 
 	public LocalDateTime getDate() {
@@ -51,4 +69,5 @@ public class DataLogs implements Serializable {
 	public void setDate(LocalDateTime date) {
 		this.date = date;
 	}
+
 }
