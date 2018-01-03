@@ -2,6 +2,7 @@ package iot.fei.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ import iot.fei.controller.configuration.PathConfiguration;
 import iot.fei.core.service.DeviceService;
 import iot.fei.mapper.DeviceMapper;
 
+@CrossOrigin
 @Controller
 @RequestMapping("/devices")
 public class DeviceController {

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import iot.fei.core.service.AccountService;
 import iot.fei.mapper.AccountMapper;
 import iot.fei.mapper.DeviceMapper;
 
+@CrossOrigin
 @Controller
 @RequestMapping("/accounts")
 public class AccountController {
