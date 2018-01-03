@@ -26,6 +26,13 @@ public class AccountMapperImpl implements AccountMapper {
 				.byDefault() //
 				.register();
 
+		mapperFactory.classMap(CSLogIn.class, LogIn.class) //
+				.byDefault() //
+				.register();
+
+		// TODO nevyriesene mapovanie casu
+		mapperFactory.getConverterFactory().registerConverter(new LocalDateConverter());
+
 		mapper = mapperFactory.getMapperFacade();
 	}
 
@@ -41,7 +48,6 @@ public class AccountMapperImpl implements AccountMapper {
 
 	@Override
 	public LogIn mapAsLogIn(CSLogIn logIn) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.map(logIn, LogIn.class);
 	}
 }

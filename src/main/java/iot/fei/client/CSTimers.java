@@ -11,14 +11,18 @@ public class CSTimers {
 
 	private List<LocalDateTime> plugTimers = null;
 
-	public CSTimers(Long id) {
-		super();
-		this.id = id;
+	private List<LocalDateTime> plugTimersStart = null;
+
+	private List<LocalDateTime> plugTimersStop = null;
+
+	private List<Boolean> repeat;
+
+	public Long getId() {
+		return id;
 	}
 
-	public CSTimers(List<LocalDateTime> plugTimers) {
-		super();
-		this.plugTimers = plugTimers;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public List<LocalDateTime> getPlugTimers() {
@@ -29,16 +33,27 @@ public class CSTimers {
 		this.plugTimers = plugTimers;
 	}
 
-	public CSTimers() {
-		super();
+	public List<LocalDateTime> getPlugTimersStart() {
+		return plugTimersStart;
 	}
 
-	public Long getId() {
-		return id;
+	public void setPlugTimersStart(List<LocalDateTime> plugTimersStart) {
+		this.plugTimersStart = plugTimersStart;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public List<LocalDateTime> getPlugTimersStop() {
+		return plugTimersStop;
 	}
 
+	public void setPlugTimersStop(List<LocalDateTime> plugTimersStop) {
+		this.plugTimersStop = plugTimersStop;
+	}
+
+	public List<Boolean> getRepeat() {
+		return repeat;
+	}
+
+	public void setRepeat(List<Boolean> repeat) {
+		this.repeat = repeat;
+	}
 }

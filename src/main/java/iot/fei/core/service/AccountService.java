@@ -2,7 +2,6 @@ package iot.fei.core.service;
 
 import java.util.List;
 
-import iot.fei.client.CSPlug;
 import iot.fei.core.domain.Account;
 import iot.fei.core.domain.DeviceData;
 import iot.fei.core.domain.LogIn;
@@ -12,7 +11,7 @@ public interface AccountService {
 
 	Account createAccount(Account mapAsAccount);
 
-	Account logIn(LogIn mapAsLogIn);
+	Account logIn(LogIn mapAsLogIn) throws Exception;
 
 	Account getAccount(Long id);
 
@@ -20,7 +19,7 @@ public interface AccountService {
 
 	DeviceData getDeviceData(Long id, String deviceId);
 
-	Plug setOptionsForPlug(CSPlug plug);
+	Plug setOptionsForPlug(Plug plug);
 
 	List<String> getDeviceListForAccount(Long id);
 

@@ -21,13 +21,11 @@ public class Timers {
 	Long id;
 
 	@Column
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@ElementCollection
 	private List<LocalDateTime> plugTimersStart = null;
 
 	// TODO vymysiet ako tam nechat len den hodinu minutu sekundu
 	@Column
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	@ElementCollection
 	private List<LocalDateTime> plugTimersStop = null;
 
@@ -49,6 +47,7 @@ public class Timers {
 		this.modes = modes;
 	}
 
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	public List<LocalDateTime> getPlugTimersStart() {
 		return plugTimersStart;
 	}
@@ -57,6 +56,7 @@ public class Timers {
 		this.plugTimersStart = plugTimersStart;
 	}
 
+	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	public List<LocalDateTime> getPlugTimersStop() {
 		return plugTimersStop;
 	}

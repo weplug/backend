@@ -1,5 +1,6 @@
 package iot.fei.core.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -17,10 +18,10 @@ public class Modes {
 	@Column
 	private Boolean manual = null;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Timers timers = null;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private ModesLight light = null;
 
 	@Column

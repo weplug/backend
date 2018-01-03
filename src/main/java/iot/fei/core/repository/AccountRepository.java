@@ -6,4 +6,6 @@ import iot.fei.core.domain.Account;
 
 public interface AccountRepository extends CrudRepository<Account, Long> {
 
+	Account findByEmailAndPassword(String email, String password);
+
 }

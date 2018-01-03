@@ -21,7 +21,7 @@ public class Plug {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id;
 
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	private Modes modes = null;
 
 	@Column

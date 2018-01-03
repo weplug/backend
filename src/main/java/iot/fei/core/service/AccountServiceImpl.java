@@ -6,13 +6,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import iot.fei.client.CSPlug;
 import iot.fei.core.domain.Account;
 import iot.fei.core.domain.DeviceData;
 import iot.fei.core.domain.LogIn;
 import iot.fei.core.domain.Plug;
 import iot.fei.core.repository.AccountRepository;
 import iot.fei.core.repository.DeviceDataRepository;
+import iot.fei.core.repository.PlugRepository;
 
 @Component
 public class AccountServiceImpl implements AccountService {
@@ -23,15 +23,21 @@ public class AccountServiceImpl implements AccountService {
 	@Autowired
 	AccountRepository accountRepository;
 
+	@Autowired
+	PlugRepository plugRepository;
+
 	@Override
 	public Account createAccount(Account account) {
 		return accountRepository.save(account);
 	}
 
 	@Override
-	public Account logIn(LogIn mapAsLogIn) {
-		// TODO Auto-generated method stub
-		return null;
+	public Account logIn(LogIn logIn) throws Exception {
+		Account account = accountRepository.findByEmailAndPassword(logIn.getEmail(), logIn.getPassword());
+		if (account == null) {
+			throw new Exception("account not found");
+		}
+		return account;
 	}
 
 	@Override
@@ -51,15 +57,16 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public Plug setOptionsForPlug(CSPlug plug) {
-		// TODO Auto-generated method stub
-		return null;
+	public Plug setOptionsForPlug(Plug plug) {
+		Plug oldPlug = plugRepository.findOne(plug.getId());
+		plug.setDevice(oldPlug.getDevice());
+		return plugRepository.save(plug);
 	}
 
 	@Override
 	public List<String> getDeviceListForAccount(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		List<String> var = deviceDataRepository.findIdByAccountId(id);
+		return var;
 	}
 
 	@Override

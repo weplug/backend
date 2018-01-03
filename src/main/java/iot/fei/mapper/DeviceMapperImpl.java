@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import iot.fei.client.CSDeviceData;
 import iot.fei.client.CSGatheredData;
+import iot.fei.client.CSPlug;
 import iot.fei.core.domain.DeviceData;
 import iot.fei.core.domain.GatheredData;
 import iot.fei.core.domain.Plug;
@@ -24,7 +25,11 @@ public class DeviceMapperImpl implements DeviceMapper {
 		mapperFactory.classMap(GatheredData.class, CSGatheredData.class) //
 				.byDefault() //
 				.register();
-
+		
+		mapperFactory.classMap(Plug.class, CSPlug.class) //
+				.byDefault() //
+				.register();
+		
 		mapper = mapperFactory.getMapperFacade();
 	}
 
@@ -49,8 +54,12 @@ public class DeviceMapperImpl implements DeviceMapper {
 	}
 
 	@Override
-	public CSDeviceData mapCSPlug(Plug setOptionsForPlug) {
-		// TODO Auto-generated method stub
-		return null;
+	public CSPlug mapCSPlug(Plug plug) {
+		return mapper.map(plug, CSPlug.class);
+	}
+	
+	@Override
+	public Plug mapPlug(CSPlug csPlug) {
+		return mapper.map(csPlug, Plug.class);
 	}
 }

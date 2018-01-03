@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
+// @NamedQuery(name = "DeviceData.findByAccoundId", query = "SELECT p FROM
+// Person p WHERE LOWER(p.lastName) = LOWER(?1)")
 public class DeviceData {
 	@Id
 	@Column

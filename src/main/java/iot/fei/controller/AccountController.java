@@ -37,7 +37,7 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = "/log-in", method = RequestMethod.POST)
-	public @ResponseBody CSAccount accountLogIn(@RequestBody CSLogIn logIn) {
+	public @ResponseBody CSAccount accountLogIn(@RequestBody CSLogIn logIn) throws Exception {
 		return accountMapper.mapAsCSAccount(accountService.logIn(accountMapper.mapAsLogIn(logIn)));
 	}
 
@@ -57,8 +57,8 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID, method = RequestMethod.POST)
-	public @ResponseBody CSDeviceData setOptionsForPlug(@PathVariable("id") Long id, @PathVariable("device-id") String deviceId, @RequestBody CSPlug plug) {
-		return deviceMapper.mapCSPlug(accountService.setOptionsForPlug(plug));
+	public @ResponseBody CSPlug setOptionsForPlug(@PathVariable("id") Long id, @PathVariable("device-id") String deviceId, @RequestBody CSPlug plug) {
+		return deviceMapper.mapCSPlug(accountService.setOptionsForPlug(deviceMapper.mapPlug(plug)));
 	}
 
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES, method = RequestMethod.GET)
