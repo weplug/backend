@@ -9,8 +9,6 @@ import javax.persistence.Entity;
 public class CSTimers {
 	Long id;
 
-	private List<LocalDateTime> plugTimers = null;
-
 	private List<LocalDateTime> plugTimersStart = null;
 
 	private List<LocalDateTime> plugTimersStop = null;
@@ -23,14 +21,6 @@ public class CSTimers {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public List<LocalDateTime> getPlugTimers() {
-		return plugTimers;
-	}
-
-	public void setPlugTimers(List<LocalDateTime> plugTimers) {
-		this.plugTimers = plugTimers;
 	}
 
 	public List<LocalDateTime> getPlugTimersStart() {

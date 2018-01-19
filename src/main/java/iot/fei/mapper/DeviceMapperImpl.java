@@ -1,5 +1,6 @@
 package iot.fei.mapper;
 
+import ma.glasnost.orika.converter.builtin.PassThroughConverter;
 import org.springframework.stereotype.Component;
 
 import iot.fei.client.CSDeviceData;
@@ -12,12 +13,15 @@ import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
 
+import java.time.LocalDateTime;
+
 @Component
 public class DeviceMapperImpl implements DeviceMapper {
 	private final static MapperFacade mapper;
 
 	static {
 		final MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
+		mapperFactory.getConverterFactory().registerConverter(new PassThroughConverter(LocalDateTime.class));
 		mapperFactory.classMap(DeviceData.class, CSDeviceData.class) //
 				.byDefault() //
 				.register();
@@ -29,7 +33,7 @@ public class DeviceMapperImpl implements DeviceMapper {
 		mapperFactory.classMap(Plug.class, CSPlug.class) //
 				.byDefault() //
 				.register();
-		
+
 		mapper = mapperFactory.getMapperFacade();
 	}
 

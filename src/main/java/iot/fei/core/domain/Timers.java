@@ -65,6 +65,14 @@ public class Timers {
 		this.plugTimersStop = plugTimersStop;
 	}
 
+	public List<Boolean> getRepeat() {
+		return repeat;
+	}
+
+	public void setRepeat(List<Boolean> repeat) {
+		this.repeat = repeat;
+	}
+
 	public Modes getModes() {
 		return modes;
 	}
