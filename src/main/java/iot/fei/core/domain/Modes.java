@@ -16,10 +16,10 @@ public class Modes {
 	Long id;
 
 	@Column
-	private Boolean manual = null;
+	private Boolean manual = true;
 
 	@OneToOne(cascade = CascadeType.ALL)
-	private Timers timers = null;
+	private Timers timers = new Timers();
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private ModesLight light = null;

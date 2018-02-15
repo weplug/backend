@@ -8,4 +8,6 @@ public class PathConfiguration {
 	public static final String DEVICES = "/devices";
 
 	public static final String REGISTER = "/register";
+    public static final String LAST =  "/last";
+	public static final String PLUG = "/plug";
 }

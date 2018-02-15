@@ -34,4 +34,5 @@ public class DeviceController {
 	public @ResponseBody CSDeviceData getDeviceData(@PathVariable("device-id") String id) {
 		return deviceMapper.mapCSDeviceData(deviceService.getOptionsDataForDevice(id));
 	}
+
 }

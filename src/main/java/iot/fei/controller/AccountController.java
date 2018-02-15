@@ -64,7 +64,7 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES, method = RequestMethod.GET)
-	public @ResponseBody List<String> getAccountDeviceData(@PathVariable("id") Long id) {
+	public @ResponseBody List<String> getAccountDeviceList(@PathVariable("id") Long id) {
 		return accountService.getDeviceListForAccount(id);
 	}
 
@@ -72,4 +72,10 @@ public class AccountController {
 	public @ResponseBody CSAccount registerDeviceForAccount(@PathVariable("id") Long id, @PathVariable("device-id") String deviceId) {
 		return accountMapper.mapAsCSAccount(accountService.registerDeviceToAccount(id, deviceId));
 	}
+
+//	@RequestMapping(value = PathConfiguration.DEVICE_ID + PathConfiguration.DEVICE_ID + PathConfiguration.PLUG + PathConfiguration.ID + PathConfiguration.LAST, method = RequestMethod.GET)
+//	public @ResponseBody CSDeviceData getDeviceData(@PathVariable("device-id") String deviceId, @PathVariable("id") Long id) {
+//		return deviceMapper.mapCSDeviceData(accountService.getLast(id));
+//	}
+
 }

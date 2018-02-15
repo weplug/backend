@@ -14,20 +14,12 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 public class CSTemperature {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id;
 
-	@Column
 	private Float temp = null;
 
-	@Column
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	LocalDateTime time = LocalDateTime.now();
-
-	@ManyToOne
-	@JoinColumn(name = "device_id")
-	private CSDeviceData device;
 
 	public CSTemperature() {
 		super();
@@ -45,14 +37,6 @@ public class CSTemperature {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public CSDeviceData getDevice() {
-		return device;
-	}
-
-	public void setDevice(CSDeviceData device) {
-		this.device = device;
 	}
 
 	public Float getTemp() {

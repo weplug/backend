@@ -3,13 +3,10 @@ package iot.fei.core.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import iot.fei.core.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import iot.fei.core.domain.Account;
-import iot.fei.core.domain.DeviceData;
-import iot.fei.core.domain.LogIn;
-import iot.fei.core.domain.Plug;
 import iot.fei.core.repository.AccountRepository;
 import iot.fei.core.repository.DeviceDataRepository;
 import iot.fei.core.repository.PlugRepository;
@@ -79,6 +76,7 @@ public class AccountServiceImpl implements AccountService {
 		for (int i = 0; i < 3; i++) {
 			Plug plug = new Plug();
 			plug.setDevice(device);
+			plug.setModes(new Modes());
 			plugs.add(plug);
 		}
 		device.setPlugs(plugs);

@@ -29,6 +29,7 @@ public class DeviceServiceImpl implements DeviceService {
 		DeviceData data = deviceDataRepository.findOne(id);
 		Temperature temperature = new Temperature(gatheredDatas.getTemp());
 		data.getTemps().add(temperature);
+		temperature.setDevice(data);
 		for (int i = 0; i < gatheredDatas.geteConsumption().size(); i++) {
 			if (data.getPlugs().size() <= i) {
 				Plug plug = new Plug();
@@ -36,6 +37,7 @@ public class DeviceServiceImpl implements DeviceService {
 				data.getPlugs().add(i, plug);
 			}
 			Consumption consumption = new Consumption(gatheredDatas.geteConsumption().get(i));
+			consumption.setPlug(data.getPlugs().get(i));
 			data.getPlugs().get(i).geteConsumption().add(consumption);
 			data.getPlugs().get(i).setPlugStates(gatheredDatas.getPlugStates().get(i));
 		}

@@ -1,6 +1,7 @@
 package iot.fei.core.domain;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -22,16 +23,16 @@ public class Timers {
 
 	@Column
 	@ElementCollection
-	private List<LocalDateTime> plugTimersStart = null;
+	private List<LocalDateTime> plugTimersStart = new ArrayList<>();
 
 	// TODO vymysiet ako tam nechat len den hodinu minutu sekundu
 	@Column
 	@ElementCollection
-	private List<LocalDateTime> plugTimersStop = null;
+	private List<LocalDateTime> plugTimersStop = new ArrayList<>();
 
 	@Column
 	@ElementCollection
-	private List<Boolean> repeat;
+	private List<Boolean> repeat = new ArrayList<>();
 
 	@OneToOne
 	@PrimaryKeyJoinColumn
