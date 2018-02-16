@@ -5,6 +5,8 @@ public class PathConfiguration {
 
 	public static final String DEVICE_ID = "/{device-id}";
 
+	public static final String PLUG_ID = "/{plug-id}";
+
 	public static final String DEVICES = "/devices";
 
 	public static final String REGISTER = "/register";

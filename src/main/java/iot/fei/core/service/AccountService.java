@@ -2,10 +2,7 @@ package iot.fei.core.service;
 
 import java.util.List;
 
-import iot.fei.core.domain.Account;
-import iot.fei.core.domain.DeviceData;
-import iot.fei.core.domain.LogIn;
-import iot.fei.core.domain.Plug;
+import iot.fei.core.domain.*;
 
 public interface AccountService {
 
@@ -24,4 +21,6 @@ public interface AccountService {
 	List<String> getDeviceListForAccount(Long id);
 
 	Account registerDeviceToAccount(Long id, String deviceId);
+
+    Consumption getLast(String deviceId, Long id) throws Exception;
 }

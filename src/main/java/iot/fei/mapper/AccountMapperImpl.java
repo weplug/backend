@@ -1,5 +1,7 @@
 package iot.fei.mapper;
 
+import iot.fei.client.CSConsumption;
+import iot.fei.core.domain.Consumption;
 import org.springframework.stereotype.Component;
 
 import iot.fei.client.CSAccount;
@@ -49,5 +51,10 @@ public class AccountMapperImpl implements AccountMapper {
 	@Override
 	public LogIn mapAsLogIn(CSLogIn logIn) {
 		return mapper.map(logIn, LogIn.class);
+	}
+
+	@Override
+	public CSConsumption mapAsCSConsumption(Consumption last) {
+		return mapper.map(last, CSConsumption.class);
 	}
 }

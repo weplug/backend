@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import iot.fei.core.domain.*;
+import iot.fei.core.repository.ConsumptionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -22,6 +23,9 @@ public class AccountServiceImpl implements AccountService {
 
 	@Autowired
 	PlugRepository plugRepository;
+
+	@Autowired
+    ConsumptionRepository consumptionRepository;
 
 	@Override
 	public Account createAccount(Account account) {
@@ -72,7 +76,7 @@ public class AccountServiceImpl implements AccountService {
 		DeviceData device = new DeviceData();
 		device.setAccount(account);
 		device.setId(deviceId);
-		List<Plug> plugs = new ArrayList<Plug>();
+		List<Plug> plugs = new ArrayList<>();
 		for (int i = 0; i < 3; i++) {
 			Plug plug = new Plug();
 			plug.setDevice(device);
@@ -83,5 +87,16 @@ public class AccountServiceImpl implements AccountService {
 		account.getDevices().add(device);
 		// deviceDataRepository.save(device);
 		return accountRepository.save(account);
+	}
+
+	@Override
+	public Consumption getLast(String deviceId, Long id) throws Exception {
+        List<Plug> plugList = deviceDataRepository.findOne(deviceId).getPlugs();
+        Plug plug = plugList.stream().filter(e -> e.getId() == id).findFirst().get();
+        if(plug != null) {
+            return consumptionRepository.findFirstByPlugIdOrderByDateDesc(plug.getId());
+        } else {
+            throw new Exception("Plug ID is not in Device");
+        }
 	}
 }

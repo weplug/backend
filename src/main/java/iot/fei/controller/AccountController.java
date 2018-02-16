@@ -2,6 +2,7 @@ package iot.fei.controller;
 
 import java.util.List;
 
+import iot.fei.client.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -11,10 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import iot.fei.client.CSAccount;
-import iot.fei.client.CSDeviceData;
-import iot.fei.client.CSLogIn;
-import iot.fei.client.CSPlug;
 import iot.fei.controller.configuration.PathConfiguration;
 import iot.fei.core.service.AccountService;
 import iot.fei.mapper.AccountMapper;
@@ -73,9 +70,9 @@ public class AccountController {
 		return accountMapper.mapAsCSAccount(accountService.registerDeviceToAccount(id, deviceId));
 	}
 
-//	@RequestMapping(value = PathConfiguration.DEVICE_ID + PathConfiguration.DEVICE_ID + PathConfiguration.PLUG + PathConfiguration.ID + PathConfiguration.LAST, method = RequestMethod.GET)
-//	public @ResponseBody CSDeviceData getDeviceData(@PathVariable("device-id") String deviceId, @PathVariable("id") Long id) {
-//		return deviceMapper.mapCSDeviceData(accountService.getLast(id));
-//	}
+	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.PLUG + PathConfiguration.PLUG_ID + PathConfiguration.LAST, method = RequestMethod.GET)
+	public @ResponseBody CSConsumption getLastConsumptionForDevice(@PathVariable("device-id") String deviceId, @PathVariable("plug-id") Long plugId, @PathVariable("id") Long id) throws Exception {
+		return accountMapper.mapAsCSConsumption(accountService.getLast(deviceId, plugId));
+	}
 
 }
