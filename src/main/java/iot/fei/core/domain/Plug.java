@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Plug {
@@ -27,6 +28,10 @@ public class Plug {
 	@Column
 	@OneToMany(mappedBy = "plug", cascade = CascadeType.ALL)
 	private List<Consumption> eConsumption = new ArrayList<Consumption>();
+
+	@Column
+	@NotNull
+	private Integer plugOrder;
 
 	@Enumerated
 	private PlugState plugStates = null;
@@ -86,5 +91,13 @@ public class Plug {
 
 	public void setDevice(DeviceData device) {
 		this.device = device;
+	}
+
+	public Integer getPlugOrder() {
+		return plugOrder;
+	}
+
+	public void setPlugOrder(Integer plugOrder) {
+		this.plugOrder = plugOrder;
 	}
 }

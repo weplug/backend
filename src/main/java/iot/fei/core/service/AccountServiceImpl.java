@@ -1,5 +1,6 @@
 package iot.fei.core.service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,8 +78,10 @@ public class AccountServiceImpl implements AccountService {
 		device.setAccount(account);
 		device.setId(deviceId);
 		List<Plug> plugs = new ArrayList<>();
+
 		for (int i = 0; i < 3; i++) {
 			Plug plug = new Plug();
+			plug.setPlugOrder(i);
 			plug.setDevice(device);
 			plug.setModes(new Modes());
 			plugs.add(plug);
@@ -99,4 +102,9 @@ public class AccountServiceImpl implements AccountService {
             throw new Exception("Plug ID is not in Device");
         }
 	}
+
+    @Override
+    public List<Consumption> findConsumptionBetweenDate(String deviceId, Long plugId, LocalDateTime from, LocalDateTime to) {
+        return consumptionRepository.findByPlugIdAndDateBetween(plugId, from, to);
+    }
 }

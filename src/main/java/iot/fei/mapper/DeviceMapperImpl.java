@@ -1,5 +1,7 @@
 package iot.fei.mapper;
 
+import iot.fei.client.CSConsumption;
+import iot.fei.core.domain.Consumption;
 import ma.glasnost.orika.converter.builtin.PassThroughConverter;
 import org.springframework.stereotype.Component;
 
@@ -14,6 +16,7 @@ import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Component
 public class DeviceMapperImpl implements DeviceMapper {
@@ -65,5 +68,10 @@ public class DeviceMapperImpl implements DeviceMapper {
 	@Override
 	public Plug mapPlug(CSPlug csPlug) {
 		return mapper.map(csPlug, Plug.class);
+	}
+
+	@Override
+	public List<CSConsumption> mapAsCSConsumptionList(List<Consumption> consumptionBetweenDate) {
+		return mapper.mapAsList(consumptionBetweenDate, CSConsumption.class);
 	}
 }

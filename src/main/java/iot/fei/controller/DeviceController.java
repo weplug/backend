@@ -26,7 +26,7 @@ public class DeviceController {
 	DeviceMapper deviceMapper;
 
 	@RequestMapping(value = PathConfiguration.DEVICE_ID, method = RequestMethod.POST)
-	public @ResponseBody void createGatheredData(@PathVariable("device-id") String id, @RequestBody CSGatheredData gData) {
+	public @ResponseBody void createGatheredData(@PathVariable("device-id") String id, @RequestBody CSGatheredData gData) throws Exception {
 		deviceService.createGatheredData(deviceMapper.mapGatheredData(gData), id);
 	}
 

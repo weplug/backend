@@ -21485,3 +21485,899 @@ java.lang.NullPointerException: null
 2018-02-16 12:01:14.678  INFO 13464 --- [http-nio-8081-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
 2018-02-16 12:01:14.678  INFO 13464 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
 2018-02-16 12:01:14.706  INFO 13464 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 27 ms
+2018-02-16 12:29:13.608  INFO 4124 --- [main] iot.fei.IotApplication                   : Starting IotApplication on DESKTOP-6N2O8MV with PID 4124 (C:\Users\jura\Dropbox\projekt\iot-projekt\target\classes started by jura in C:\Users\jura\Dropbox\projekt\iot-projekt)
+2018-02-16 12:29:13.613  INFO 4124 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2018-02-16 12:29:13.703  INFO 4124 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3fc9504b: startup date [Fri Feb 16 12:29:13 CET 2018]; root of context hierarchy
+2018-02-16 12:29:14.868  INFO 4124 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-16 12:29:15.409  INFO 4124 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2018-02-16 12:29:15.420  INFO 4124 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-16 12:29:15.421  INFO 4124 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-16 12:29:15.549  INFO 4124 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-16 12:29:15.550  INFO 4124 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1857 ms
+2018-02-16 12:29:15.723  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-16 12:29:15.730  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-16 12:29:15.730  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-16 12:29:15.734  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-16 12:29:15.734  INFO 4124 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-16 12:29:16.711  INFO 4124 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-16 12:29:18.032  INFO 4124 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-02-16 12:29:18.946  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3fc9504b: startup date [Fri Feb 16 12:29:13 CET 2018]; root of context hierarchy
+2018-02-16 12:29:19.009  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.createAccount(iot.fei.client.CSAccount)
+2018-02-16 12:29:19.014  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[DELETE]}" onto public boolean iot.fei.controller.AccountController.deleteAccount(java.lang.Long)
+2018-02-16 12:29:19.014  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[GET]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.getAccount(java.lang.Long)
+2018-02-16 12:29:19.015  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[POST]}" onto public iot.fei.client.CSPlug iot.fei.controller.AccountController.setOptionsForPlug(java.lang.Long,java.lang.String,iot.fei.client.CSPlug)
+2018-02-16 12:29:19.016  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices],methods=[GET]}" onto public java.util.List<java.lang.String> iot.fei.controller.AccountController.getAccountDeviceList(java.lang.Long)
+2018-02-16 12:29:19.017  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/last],methods=[GET]}" onto public iot.fei.client.CSConsumption iot.fei.controller.AccountController.getLastConsumptionForPlug(java.lang.String,java.lang.Long,java.lang.Long) throws java.lang.Exception
+2018-02-16 12:29:19.018  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/between],methods=[GET]}" onto public java.util.List<iot.fei.client.CSConsumption> iot.fei.controller.AccountController.getConsumptionForPlugBetween(iot.fei.client.CSDateBetween,java.lang.String,java.lang.Long,java.lang.Long)
+2018-02-16 12:29:19.020  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/register],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String)
+2018-02-16 12:29:19.021  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.getDeviceInfo(java.lang.Long,java.lang.String)
+2018-02-16 12:29:19.022  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/log-in],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.accountLogIn(iot.fei.client.CSLogIn) throws java.lang.Exception
+2018-02-16 12:29:19.024  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.DeviceController.getDeviceData(java.lang.String)
+2018-02-16 12:29:19.025  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[POST]}" onto public void iot.fei.controller.DeviceController.createGatheredData(java.lang.String,iot.fei.client.CSGatheredData)
+2018-02-16 12:29:19.027  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-02-16 12:29:19.028  INFO 4124 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-16 12:29:19.062  INFO 4124 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-16 12:29:19.063  INFO 4124 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-16 12:29:19.096  INFO 4124 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-16 12:29:19.327  INFO 4124 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-02-16 12:29:19.388  INFO 4124 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8081 (http)
+2018-02-16 12:29:19.394  INFO 4124 --- [main] iot.fei.IotApplication                   : Started IotApplication in 6.217 seconds (JVM running for 7.442)
+2018-02-16 12:31:50.342  INFO 8720 --- [main] iot.fei.IotApplication                   : Starting IotApplication on DESKTOP-6N2O8MV with PID 8720 (C:\Users\jura\Dropbox\projekt\iot-projekt\target\classes started by jura in C:\Users\jura\Dropbox\projekt\iot-projekt)
+2018-02-16 12:31:50.346  INFO 8720 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2018-02-16 12:31:50.429  INFO 8720 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3fc9504b: startup date [Fri Feb 16 12:31:50 CET 2018]; root of context hierarchy
+2018-02-16 12:31:51.614  INFO 8720 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-16 12:31:52.131  INFO 8720 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2018-02-16 12:31:52.142  INFO 8720 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-16 12:31:52.143  INFO 8720 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-16 12:31:52.251  INFO 8720 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-16 12:31:52.254  INFO 8720 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1838 ms
+2018-02-16 12:31:52.422  INFO 8720 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-16 12:31:52.427  INFO 8720 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-16 12:31:52.428  INFO 8720 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-16 12:31:52.431  INFO 8720 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-16 12:31:52.431  INFO 8720 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-16 12:31:53.371  INFO 8720 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-16 12:31:54.703  INFO 8720 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-02-16 12:31:55.600  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3fc9504b: startup date [Fri Feb 16 12:31:50 CET 2018]; root of context hierarchy
+2018-02-16 12:31:55.667  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/last],methods=[GET]}" onto public iot.fei.client.CSConsumption iot.fei.controller.AccountController.getLastConsumptionForPlug(java.lang.String,java.lang.Long,java.lang.Long) throws java.lang.Exception
+2018-02-16 12:31:55.669  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices],methods=[GET]}" onto public java.util.List<java.lang.String> iot.fei.controller.AccountController.getAccountDeviceList(java.lang.Long)
+2018-02-16 12:31:55.670  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/between],methods=[POST]}" onto public java.util.List<iot.fei.client.CSConsumption> iot.fei.controller.AccountController.getConsumptionForPlugBetween(iot.fei.client.CSDateBetween,java.lang.String,java.lang.Long,java.lang.Long)
+2018-02-16 12:31:55.675  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/register],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String)
+2018-02-16 12:31:55.676  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.createAccount(iot.fei.client.CSAccount)
+2018-02-16 12:31:55.676  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[GET]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.getAccount(java.lang.Long)
+2018-02-16 12:31:55.676  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[DELETE]}" onto public boolean iot.fei.controller.AccountController.deleteAccount(java.lang.Long)
+2018-02-16 12:31:55.678  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[POST]}" onto public iot.fei.client.CSPlug iot.fei.controller.AccountController.setOptionsForPlug(java.lang.Long,java.lang.String,iot.fei.client.CSPlug)
+2018-02-16 12:31:55.679  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.getDeviceInfo(java.lang.Long,java.lang.String)
+2018-02-16 12:31:55.679  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/log-in],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.accountLogIn(iot.fei.client.CSLogIn) throws java.lang.Exception
+2018-02-16 12:31:55.680  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.DeviceController.getDeviceData(java.lang.String)
+2018-02-16 12:31:55.681  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[POST]}" onto public void iot.fei.controller.DeviceController.createGatheredData(java.lang.String,iot.fei.client.CSGatheredData)
+2018-02-16 12:31:55.683  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-02-16 12:31:55.685  INFO 8720 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-16 12:31:55.719  INFO 8720 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-16 12:31:55.719  INFO 8720 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-16 12:31:55.754  INFO 8720 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-16 12:31:56.013  INFO 8720 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-02-16 12:31:56.073  INFO 8720 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8081 (http)
+2018-02-16 12:31:56.081  INFO 8720 --- [main] iot.fei.IotApplication                   : Started IotApplication in 6.102 seconds (JVM running for 7.238)
+2018-02-16 15:53:47.589  INFO 8720 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-02-16 15:53:47.589  INFO 8720 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-02-16 15:53:47.608  INFO 8720 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 19 ms
+2018-02-16 15:59:49.209  INFO 4844 --- [main] iot.fei.IotApplication                   : Starting IotApplication on DESKTOP-6N2O8MV with PID 4844 (C:\Users\jura\Dropbox\projekt\iot-projekt\target\classes started by jura in C:\Users\jura\Dropbox\projekt\iot-projekt)
+2018-02-16 15:59:49.214  INFO 4844 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2018-02-16 15:59:49.294  INFO 4844 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@61f05988: startup date [Fri Feb 16 15:59:49 CET 2018]; root of context hierarchy
+2018-02-16 15:59:50.514  INFO 4844 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-16 15:59:51.112  INFO 4844 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2018-02-16 15:59:51.126  INFO 4844 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-16 15:59:51.128  INFO 4844 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-16 15:59:51.266  INFO 4844 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-16 15:59:51.266  INFO 4844 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1980 ms
+2018-02-16 15:59:51.432  INFO 4844 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-16 15:59:51.437  INFO 4844 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-16 15:59:51.437  INFO 4844 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-16 15:59:51.440  INFO 4844 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-16 15:59:51.440  INFO 4844 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-16 15:59:52.452  INFO 4844 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-16 15:59:53.978  INFO 4844 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-02-16 15:59:54.951  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@61f05988: startup date [Fri Feb 16 15:59:49 CET 2018]; root of context hierarchy
+2018-02-16 15:59:55.028  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.createAccount(iot.fei.client.CSAccount)
+2018-02-16 15:59:55.030  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[DELETE]}" onto public boolean iot.fei.controller.AccountController.deleteAccount(java.lang.Long)
+2018-02-16 15:59:55.030  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[POST]}" onto public iot.fei.client.CSPlug iot.fei.controller.AccountController.setOptionsForPlug(java.lang.Long,java.lang.String,iot.fei.client.CSPlug)
+2018-02-16 15:59:55.032  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[GET]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.getAccount(java.lang.Long)
+2018-02-16 15:59:55.033  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/last],methods=[GET]}" onto public iot.fei.client.CSConsumption iot.fei.controller.AccountController.getLastConsumptionForPlug(java.lang.String,java.lang.Long,java.lang.Long) throws java.lang.Exception
+2018-02-16 15:59:55.033  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/register],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String)
+2018-02-16 15:59:55.034  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices],methods=[GET]}" onto public java.util.List<java.lang.String> iot.fei.controller.AccountController.getAccountDeviceList(java.lang.Long)
+2018-02-16 15:59:55.036  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/between],methods=[POST]}" onto public java.util.List<iot.fei.client.CSConsumption> iot.fei.controller.AccountController.getConsumptionForPlugBetween(iot.fei.client.CSDateBetween,java.lang.String,java.lang.Long,java.lang.Long)
+2018-02-16 15:59:55.036  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/log-in],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.accountLogIn(iot.fei.client.CSLogIn) throws java.lang.Exception
+2018-02-16 15:59:55.037  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.getDeviceInfo(java.lang.Long,java.lang.String)
+2018-02-16 15:59:55.038  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.DeviceController.getDeviceData(java.lang.String)
+2018-02-16 15:59:55.038  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[POST]}" onto public void iot.fei.controller.DeviceController.createGatheredData(java.lang.String,iot.fei.client.CSGatheredData)
+2018-02-16 15:59:55.040  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-02-16 15:59:55.041  INFO 4844 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-16 15:59:55.083  INFO 4844 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-16 15:59:55.084  INFO 4844 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-16 15:59:55.127  INFO 4844 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-16 15:59:55.648  INFO 4844 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-02-16 15:59:55.717  INFO 4844 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8081 (http)
+2018-02-16 15:59:55.723  INFO 4844 --- [main] iot.fei.IotApplication                   : Started IotApplication in 6.937 seconds (JVM running for 8.233)
+2018-02-16 16:01:04.591  INFO 4844 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-02-16 16:01:04.591  INFO 4844 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-02-16 16:01:04.617  INFO 4844 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 26 ms
+2018-02-18 09:18:56.353  INFO 4080 --- [main] iot.fei.IotApplication                   : Starting IotApplication on DESKTOP-6N2O8MV with PID 4080 (C:\Users\jura\Dropbox\projekt\iot-projekt\target\classes started by jura in C:\Users\jura\Dropbox\projekt\iot-projekt)
+2018-02-18 09:18:56.360  INFO 4080 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2018-02-18 09:18:56.444  INFO 4080 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6d025197: startup date [Sun Feb 18 09:18:56 CET 2018]; root of context hierarchy
+2018-02-18 09:18:58.039  INFO 4080 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-18 09:18:58.795  INFO 4080 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2018-02-18 09:18:58.807  INFO 4080 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-18 09:18:58.809  INFO 4080 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-18 09:18:58.930  INFO 4080 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-18 09:18:58.930  INFO 4080 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2496 ms
+2018-02-18 09:18:59.083  INFO 4080 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-18 09:18:59.088  INFO 4080 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-18 09:18:59.089  INFO 4080 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-18 09:18:59.092  INFO 4080 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-18 09:18:59.092  INFO 4080 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-18 09:19:00.378  INFO 4080 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-18 09:19:02.513  WARN 4080 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+2018-02-18 09:19:02.523  INFO 4080 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-02-18 09:19:02.545  INFO 4080 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-02-18 09:19:02.555 ERROR 4080 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at iot.fei.IotApplication.main(IotApplication.java:12) [classes/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:954) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:882) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:370) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:359) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 16 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Unable to execute schema management to JDBC target [alter table iot.plug add column order int4]
+	at org.hibernate.tool.schema.internal.TargetDatabaseImpl.accept(TargetDatabaseImpl.java:59) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.applySqlString(SchemaMigratorImpl.java:431) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.applySqlStrings(SchemaMigratorImpl.java:449) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.migrateTable(SchemaMigratorImpl.java:253) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.doMigrationToTargets(SchemaMigratorImpl.java:170) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.doMigration(SchemaMigratorImpl.java:60) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:134) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:101) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:472) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:444) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:879) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	... 22 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near "order"
+  Position: 33
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2455) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2155) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:288) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:430) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:356) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:303) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:289) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:266) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:246) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-8.5.23.jar:na]
+	at com.sun.proxy.$Proxy84.executeUpdate(Unknown Source) ~[na:na]
+	at org.hibernate.tool.schema.internal.TargetDatabaseImpl.accept(TargetDatabaseImpl.java:56) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	... 32 common frames omitted
+
+2018-02-18 09:21:11.963  INFO 14076 --- [main] iot.fei.IotApplication                   : Starting IotApplication on DESKTOP-6N2O8MV with PID 14076 (C:\Users\jura\Dropbox\projekt\iot-projekt\target\classes started by jura in C:\Users\jura\Dropbox\projekt\iot-projekt)
+2018-02-18 09:21:11.967  INFO 14076 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2018-02-18 09:21:12.061  INFO 14076 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3fc9504b: startup date [Sun Feb 18 09:21:12 CET 2018]; root of context hierarchy
+2018-02-18 09:21:13.370  INFO 14076 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-18 09:21:13.865  INFO 14076 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2018-02-18 09:21:13.875  INFO 14076 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-18 09:21:13.876  INFO 14076 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-18 09:21:13.997  INFO 14076 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-18 09:21:14.000  INFO 14076 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1954 ms
+2018-02-18 09:21:14.167  INFO 14076 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-18 09:21:14.172  INFO 14076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-18 09:21:14.172  INFO 14076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-18 09:21:14.175  INFO 14076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-18 09:21:14.175  INFO 14076 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-18 09:21:15.165  INFO 14076 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-18 09:21:16.825  WARN 14076 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+2018-02-18 09:21:16.832  INFO 14076 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-02-18 09:21:16.861  INFO 14076 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-02-18 09:21:16.873 ERROR 14076 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at iot.fei.IotApplication.main(IotApplication.java:12) [classes/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:954) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:882) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:370) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:359) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 16 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Unable to execute schema management to JDBC target [create table iot.plug (id int8 not null, order int4, plug_states int4, device_id varchar(255), modes_id int8, primary key (id))]
+	at org.hibernate.tool.schema.internal.TargetDatabaseImpl.accept(TargetDatabaseImpl.java:59) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.applySqlString(SchemaMigratorImpl.java:431) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.applySqlStrings(SchemaMigratorImpl.java:420) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.createTable(SchemaMigratorImpl.java:236) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.doMigrationToTargets(SchemaMigratorImpl.java:167) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.doMigration(SchemaMigratorImpl.java:60) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:134) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:101) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:472) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:444) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:879) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	... 22 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near "order"
+  Position: 42
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2455) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2155) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:288) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:430) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:356) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:303) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:289) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:266) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:246) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-8.5.23.jar:na]
+	at com.sun.proxy.$Proxy84.executeUpdate(Unknown Source) ~[na:na]
+	at org.hibernate.tool.schema.internal.TargetDatabaseImpl.accept(TargetDatabaseImpl.java:56) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	... 32 common frames omitted
+
+2018-02-18 09:22:47.779  INFO 2596 --- [main] iot.fei.IotApplication                   : Starting IotApplication on DESKTOP-6N2O8MV with PID 2596 (C:\Users\jura\Dropbox\projekt\iot-projekt\target\classes started by jura in C:\Users\jura\Dropbox\projekt\iot-projekt)
+2018-02-18 09:22:47.784  INFO 2596 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2018-02-18 09:22:47.881  INFO 2596 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6d025197: startup date [Sun Feb 18 09:22:47 CET 2018]; root of context hierarchy
+2018-02-18 09:22:49.077  INFO 2596 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-18 09:22:49.569  INFO 2596 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2018-02-18 09:22:49.579  INFO 2596 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-18 09:22:49.580  INFO 2596 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-18 09:22:49.670  INFO 2596 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-18 09:22:49.670  INFO 2596 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1797 ms
+2018-02-18 09:22:49.822  INFO 2596 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-18 09:22:49.827  INFO 2596 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-18 09:22:49.827  INFO 2596 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-18 09:22:49.830  INFO 2596 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-18 09:22:49.831  INFO 2596 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-18 09:22:50.764  INFO 2596 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-18 09:22:51.640  WARN 2596 --- [main] ationConfigEmbeddedWebApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+2018-02-18 09:22:51.647  INFO 2596 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2018-02-18 09:22:51.667  INFO 2596 --- [main] utoConfigurationReportLoggingInitializer : 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+2018-02-18 09:22:51.676 ERROR 2596 --- [main] o.s.boot.SpringApplication               : Application startup failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1078) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at iot.fei.IotApplication.main(IotApplication.java:12) [classes/:na]
+Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.persistenceException(EntityManagerFactoryBuilderImpl.java:954) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:882) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:353) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:370) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:359) ~[spring-orm-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 16 common frames omitted
+Caused by: org.hibernate.tool.schema.spi.SchemaManagementException: Unable to execute schema management to JDBC target [create table iot.plug (id int8 not null, order int4, plug_states int4, device_id varchar(255), modes_id int8, primary key (id))]
+	at org.hibernate.tool.schema.internal.TargetDatabaseImpl.accept(TargetDatabaseImpl.java:59) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.applySqlString(SchemaMigratorImpl.java:431) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.applySqlStrings(SchemaMigratorImpl.java:420) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.createTable(SchemaMigratorImpl.java:236) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.doMigrationToTargets(SchemaMigratorImpl.java:167) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.schema.internal.SchemaMigratorImpl.doMigration(SchemaMigratorImpl.java:60) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:134) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.tool.hbm2ddl.SchemaUpdate.execute(SchemaUpdate.java:101) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.internal.SessionFactoryImpl.<init>(SessionFactoryImpl.java:472) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.boot.internal.SessionFactoryBuilderImpl.build(SessionFactoryBuilderImpl.java:444) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:879) ~[hibernate-entitymanager-5.0.12.Final.jar:5.0.12.Final]
+	... 22 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: syntax error at or near "order"
+  Position: 42
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2455) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2155) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:288) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:430) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:356) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:303) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:289) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:266) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at org.postgresql.jdbc.PgStatement.executeUpdate(PgStatement.java:246) ~[postgresql-9.4.1212.jre7.jar:9.4.1212.jre7]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.apache.tomcat.jdbc.pool.StatementFacade$StatementProxy.invoke(StatementFacade.java:114) ~[tomcat-jdbc-8.5.23.jar:na]
+	at com.sun.proxy.$Proxy84.executeUpdate(Unknown Source) ~[na:na]
+	at org.hibernate.tool.schema.internal.TargetDatabaseImpl.accept(TargetDatabaseImpl.java:56) ~[hibernate-core-5.0.12.Final.jar:5.0.12.Final]
+	... 32 common frames omitted
+
+2018-02-18 09:26:27.415  INFO 9620 --- [main] iot.fei.IotApplication                   : Starting IotApplication on DESKTOP-6N2O8MV with PID 9620 (C:\Users\jura\Dropbox\projekt\iot-projekt\target\classes started by jura in C:\Users\jura\Dropbox\projekt\iot-projekt)
+2018-02-18 09:26:27.418  INFO 9620 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2018-02-18 09:26:27.496  INFO 9620 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6d025197: startup date [Sun Feb 18 09:26:27 CET 2018]; root of context hierarchy
+2018-02-18 09:26:28.624  INFO 9620 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-18 09:26:29.117  INFO 9620 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2018-02-18 09:26:29.127  INFO 9620 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-18 09:26:29.128  INFO 9620 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-18 09:26:29.221  INFO 9620 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-18 09:26:29.221  INFO 9620 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1739 ms
+2018-02-18 09:26:29.404  INFO 9620 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-18 09:26:29.409  INFO 9620 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-18 09:26:29.409  INFO 9620 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-18 09:26:29.412  INFO 9620 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-18 09:26:29.413  INFO 9620 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-18 09:26:30.340  INFO 9620 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-18 09:26:31.900  INFO 9620 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-02-18 09:26:32.773  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6d025197: startup date [Sun Feb 18 09:26:27 CET 2018]; root of context hierarchy
+2018-02-18 09:26:32.841  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices],methods=[GET]}" onto public java.util.List<java.lang.String> iot.fei.controller.AccountController.getAccountDeviceList(java.lang.Long)
+2018-02-18 09:26:32.843  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/register],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String)
+2018-02-18 09:26:32.843  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/between],methods=[POST]}" onto public java.util.List<iot.fei.client.CSConsumption> iot.fei.controller.AccountController.getConsumptionForPlugBetween(iot.fei.client.CSDateBetween,java.lang.String,java.lang.Long,java.lang.Long)
+2018-02-18 09:26:32.846  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/last],methods=[GET]}" onto public iot.fei.client.CSConsumption iot.fei.controller.AccountController.getLastConsumptionForPlug(java.lang.String,java.lang.Long,java.lang.Long) throws java.lang.Exception
+2018-02-18 09:26:32.847  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[DELETE]}" onto public boolean iot.fei.controller.AccountController.deleteAccount(java.lang.Long)
+2018-02-18 09:26:32.848  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[POST]}" onto public iot.fei.client.CSPlug iot.fei.controller.AccountController.setOptionsForPlug(java.lang.Long,java.lang.String,iot.fei.client.CSPlug)
+2018-02-18 09:26:32.848  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.createAccount(iot.fei.client.CSAccount)
+2018-02-18 09:26:32.851  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[GET]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.getAccount(java.lang.Long)
+2018-02-18 09:26:32.852  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/log-in],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.accountLogIn(iot.fei.client.CSLogIn) throws java.lang.Exception
+2018-02-18 09:26:32.852  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.getDeviceInfo(java.lang.Long,java.lang.String)
+2018-02-18 09:26:32.853  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.DeviceController.getDeviceData(java.lang.String)
+2018-02-18 09:26:32.853  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[POST]}" onto public void iot.fei.controller.DeviceController.createGatheredData(java.lang.String,iot.fei.client.CSGatheredData) throws java.lang.Exception
+2018-02-18 09:26:32.856  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-02-18 09:26:32.856  INFO 9620 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-18 09:26:32.887  INFO 9620 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:26:32.887  INFO 9620 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:26:32.919  INFO 9620 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:26:33.175  INFO 9620 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-02-18 09:26:33.231  INFO 9620 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8081 (http)
+2018-02-18 09:26:33.237  INFO 9620 --- [main] iot.fei.IotApplication                   : Started IotApplication in 6.156 seconds (JVM running for 7.226)
+2018-02-18 09:26:42.112  INFO 9620 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-02-18 09:26:42.112  INFO 9620 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-02-18 09:26:42.129  INFO 9620 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+2018-02-18 09:26:58.343 ERROR 9620 --- [http-nio-8081-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at iot.fei.core.service.DeviceServiceImpl.createGatheredData(DeviceServiceImpl.java:37) ~[classes/:na]
+	at iot.fei.controller.DeviceController.createGatheredData(DeviceController.java:30) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641) [na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+
+2018-02-18 09:27:42.430  INFO 1872 --- [main] iot.fei.IotApplication                   : Starting IotApplication on DESKTOP-6N2O8MV with PID 1872 (C:\Users\jura\Dropbox\projekt\iot-projekt\target\classes started by jura in C:\Users\jura\Dropbox\projekt\iot-projekt)
+2018-02-18 09:27:42.433  INFO 1872 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2018-02-18 09:27:42.485  INFO 1872 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@53d102a2: startup date [Sun Feb 18 09:27:42 CET 2018]; root of context hierarchy
+2018-02-18 09:27:43.517  INFO 1872 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-18 09:27:44.153  INFO 1872 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2018-02-18 09:27:44.163  INFO 1872 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-18 09:27:44.164  INFO 1872 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-18 09:27:44.294  INFO 1872 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-18 09:27:44.294  INFO 1872 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1815 ms
+2018-02-18 09:27:44.461  INFO 1872 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-18 09:27:44.466  INFO 1872 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-18 09:27:44.467  INFO 1872 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-18 09:27:44.470  INFO 1872 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-18 09:27:44.470  INFO 1872 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-18 09:27:45.680  INFO 1872 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-18 09:27:47.322  INFO 1872 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-02-18 09:27:48.409  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@53d102a2: startup date [Sun Feb 18 09:27:42 CET 2018]; root of context hierarchy
+2018-02-18 09:27:48.504  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[GET]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.getAccount(java.lang.Long)
+2018-02-18 09:27:48.507  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[DELETE]}" onto public boolean iot.fei.controller.AccountController.deleteAccount(java.lang.Long)
+2018-02-18 09:27:48.508  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[POST]}" onto public iot.fei.client.CSPlug iot.fei.controller.AccountController.setOptionsForPlug(java.lang.Long,java.lang.String,iot.fei.client.CSPlug)
+2018-02-18 09:27:48.509  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.createAccount(iot.fei.client.CSAccount)
+2018-02-18 09:27:48.510  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.getDeviceInfo(java.lang.Long,java.lang.String)
+2018-02-18 09:27:48.510  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/log-in],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.accountLogIn(iot.fei.client.CSLogIn) throws java.lang.Exception
+2018-02-18 09:27:48.511  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices],methods=[GET]}" onto public java.util.List<java.lang.String> iot.fei.controller.AccountController.getAccountDeviceList(java.lang.Long)
+2018-02-18 09:27:48.513  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/between],methods=[POST]}" onto public java.util.List<iot.fei.client.CSConsumption> iot.fei.controller.AccountController.getConsumptionForPlugBetween(iot.fei.client.CSDateBetween,java.lang.String,java.lang.Long,java.lang.Long)
+2018-02-18 09:27:48.513  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/register],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String)
+2018-02-18 09:27:48.514  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/last],methods=[GET]}" onto public iot.fei.client.CSConsumption iot.fei.controller.AccountController.getLastConsumptionForPlug(java.lang.String,java.lang.Long,java.lang.Long) throws java.lang.Exception
+2018-02-18 09:27:48.515  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.DeviceController.getDeviceData(java.lang.String)
+2018-02-18 09:27:48.516  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[POST]}" onto public void iot.fei.controller.DeviceController.createGatheredData(java.lang.String,iot.fei.client.CSGatheredData) throws java.lang.Exception
+2018-02-18 09:27:48.520  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-02-18 09:27:48.521  INFO 1872 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-18 09:27:48.567  INFO 1872 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:27:48.568  INFO 1872 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:27:48.615  INFO 1872 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:27:49.109  INFO 1872 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-02-18 09:27:49.172  INFO 1872 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8081 (http)
+2018-02-18 09:27:49.179  INFO 1872 --- [main] iot.fei.IotApplication                   : Started IotApplication in 7.036 seconds (JVM running for 9.246)
+2018-02-18 09:27:58.188  INFO 1872 --- [http-nio-8081-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-02-18 09:27:58.188  INFO 1872 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-02-18 09:27:58.208  INFO 1872 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
+2018-02-18 09:28:13.744 ERROR 1872 --- [http-nio-8081-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+
+java.lang.NullPointerException: null
+	at iot.fei.core.service.DeviceServiceImpl.createGatheredData(DeviceServiceImpl.java:37) ~[classes/:na]
+	at iot.fei.controller.DeviceController.createGatheredData(DeviceController.java:30) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641) [na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+
+2018-02-18 09:29:39.916  INFO 11268 --- [main] iot.fei.IotApplication                   : Starting IotApplication on DESKTOP-6N2O8MV with PID 11268 (C:\Users\jura\Dropbox\projekt\iot-projekt\target\classes started by jura in C:\Users\jura\Dropbox\projekt\iot-projekt)
+2018-02-18 09:29:39.922  INFO 11268 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2018-02-18 09:29:40.069  INFO 11268 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6c45ee6e: startup date [Sun Feb 18 09:29:40 CET 2018]; root of context hierarchy
+2018-02-18 09:29:41.389  INFO 11268 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-18 09:29:41.951  INFO 11268 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2018-02-18 09:29:41.962  INFO 11268 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-18 09:29:41.963  INFO 11268 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-18 09:29:42.078  INFO 11268 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-18 09:29:42.079  INFO 11268 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2022 ms
+2018-02-18 09:29:42.245  INFO 11268 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-18 09:29:42.250  INFO 11268 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-18 09:29:42.251  INFO 11268 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-18 09:29:42.253  INFO 11268 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-18 09:29:42.254  INFO 11268 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-18 09:29:43.220  INFO 11268 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-18 09:29:45.167  INFO 11268 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-02-18 09:29:46.158  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6c45ee6e: startup date [Sun Feb 18 09:29:40 CET 2018]; root of context hierarchy
+2018-02-18 09:29:46.241  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices],methods=[GET]}" onto public java.util.List<java.lang.String> iot.fei.controller.AccountController.getAccountDeviceList(java.lang.Long)
+2018-02-18 09:29:46.244  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/register],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String)
+2018-02-18 09:29:46.245  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/last],methods=[GET]}" onto public iot.fei.client.CSConsumption iot.fei.controller.AccountController.getLastConsumptionForPlug(java.lang.String,java.lang.Long,java.lang.Long) throws java.lang.Exception
+2018-02-18 09:29:46.248  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/between],methods=[POST]}" onto public java.util.List<iot.fei.client.CSConsumption> iot.fei.controller.AccountController.getConsumptionForPlugBetween(iot.fei.client.CSDateBetween,java.lang.String,java.lang.Long,java.lang.Long)
+2018-02-18 09:29:46.248  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[GET]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.getAccount(java.lang.Long)
+2018-02-18 09:29:46.249  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.createAccount(iot.fei.client.CSAccount)
+2018-02-18 09:29:46.249  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[POST]}" onto public iot.fei.client.CSPlug iot.fei.controller.AccountController.setOptionsForPlug(java.lang.Long,java.lang.String,iot.fei.client.CSPlug)
+2018-02-18 09:29:46.251  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[DELETE]}" onto public boolean iot.fei.controller.AccountController.deleteAccount(java.lang.Long)
+2018-02-18 09:29:46.251  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/log-in],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.accountLogIn(iot.fei.client.CSLogIn) throws java.lang.Exception
+2018-02-18 09:29:46.252  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.getDeviceInfo(java.lang.Long,java.lang.String)
+2018-02-18 09:29:46.253  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.DeviceController.getDeviceData(java.lang.String)
+2018-02-18 09:29:46.253  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[POST]}" onto public void iot.fei.controller.DeviceController.createGatheredData(java.lang.String,iot.fei.client.CSGatheredData) throws java.lang.Exception
+2018-02-18 09:29:46.255  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-18 09:29:46.256  INFO 11268 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-02-18 09:29:46.300  INFO 11268 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:29:46.300  INFO 11268 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:29:46.347  INFO 11268 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:29:46.816  INFO 11268 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-02-18 09:29:46.875  INFO 11268 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8081 (http)
+2018-02-18 09:29:46.882  INFO 11268 --- [main] iot.fei.IotApplication                   : Started IotApplication in 7.463 seconds (JVM running for 8.794)
+2018-02-18 09:30:16.135  INFO 11268 --- [http-nio-8081-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-02-18 09:30:16.136  INFO 11268 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-02-18 09:30:16.159  INFO 11268 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 23 ms
+2018-02-18 09:30:35.740 ERROR 11268 --- [http-nio-8081-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IndexOutOfBoundsException: Index 2 out-of-bounds for length 2] with root cause
+
+java.lang.IndexOutOfBoundsException: Index 2 out-of-bounds for length 2
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64) ~[na:na]
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70) ~[na:na]
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248) ~[na:na]
+	at java.base/java.util.Objects.checkIndex(Objects.java:372) ~[na:na]
+	at java.base/java.util.ArrayList.get(ArrayList.java:440) ~[na:na]
+	at iot.fei.core.service.DeviceServiceImpl.createGatheredData(DeviceServiceImpl.java:38) ~[classes/:na]
+	at iot.fei.controller.DeviceController.createGatheredData(DeviceController.java:30) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641) [na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+
+2018-02-18 09:31:22.225 ERROR 11268 --- [http-nio-8081-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IndexOutOfBoundsException: Index 2 out-of-bounds for length 2] with root cause
+
+java.lang.IndexOutOfBoundsException: Index 2 out-of-bounds for length 2
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64) ~[na:na]
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70) ~[na:na]
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:248) ~[na:na]
+	at java.base/java.util.Objects.checkIndex(Objects.java:372) ~[na:na]
+	at java.base/java.util.ArrayList.get(ArrayList.java:440) ~[na:na]
+	at iot.fei.core.service.DeviceServiceImpl.createGatheredData(DeviceServiceImpl.java:38) ~[classes/:na]
+	at iot.fei.controller.DeviceController.createGatheredData(DeviceController.java:30) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641) [na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+
+2018-02-18 09:31:30.195  INFO 2008 --- [main] iot.fei.IotApplication                   : Starting IotApplication on DESKTOP-6N2O8MV with PID 2008 (C:\Users\jura\Dropbox\projekt\iot-projekt\target\classes started by jura in C:\Users\jura\Dropbox\projekt\iot-projekt)
+2018-02-18 09:31:30.199  INFO 2008 --- [main] iot.fei.IotApplication                   : No active profile set, falling back to default profiles: default
+2018-02-18 09:31:30.279  INFO 2008 --- [main] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6d025197: startup date [Sun Feb 18 09:31:30 CET 2018]; root of context hierarchy
+2018-02-18 09:31:31.418  INFO 2008 --- [main] f.a.AutowiredAnnotationBeanPostProcessor : JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2018-02-18 09:31:31.899  INFO 2008 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat initialized with port(s): 8081 (http)
+2018-02-18 09:31:31.909  INFO 2008 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2018-02-18 09:31:31.910  INFO 2008 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-02-18 09:31:31.998  INFO 2008 --- [localhost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2018-02-18 09:31:32.001  INFO 2008 --- [localhost-startStop-1] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1728 ms
+2018-02-18 09:31:32.142  INFO 2008 --- [localhost-startStop-1] o.s.b.w.servlet.ServletRegistrationBean  : Mapping servlet: 'dispatcherServlet' to [/]
+2018-02-18 09:31:32.147  INFO 2008 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-02-18 09:31:32.147  INFO 2008 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-02-18 09:31:32.150  INFO 2008 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-02-18 09:31:32.150  INFO 2008 --- [localhost-startStop-1] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'requestContextFilter' to: [/*]
+2018-02-18 09:31:33.051  INFO 2008 --- [main] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-02-18 09:31:34.320  INFO 2008 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-02-18 09:31:35.310  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@6d025197: startup date [Sun Feb 18 09:31:30 CET 2018]; root of context hierarchy
+2018-02-18 09:31:35.412  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[POST]}" onto public iot.fei.client.CSPlug iot.fei.controller.AccountController.setOptionsForPlug(java.lang.Long,java.lang.String,iot.fei.client.CSPlug)
+2018-02-18 09:31:35.415  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[DELETE]}" onto public boolean iot.fei.controller.AccountController.deleteAccount(java.lang.Long)
+2018-02-18 09:31:35.419  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}],methods=[GET]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.getAccount(java.lang.Long)
+2018-02-18 09:31:35.422  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.createAccount(iot.fei.client.CSAccount)
+2018-02-18 09:31:35.422  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices],methods=[GET]}" onto public java.util.List<java.lang.String> iot.fei.controller.AccountController.getAccountDeviceList(java.lang.Long)
+2018-02-18 09:31:35.423  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/register],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.registerDeviceForAccount(java.lang.Long,java.lang.String)
+2018-02-18 09:31:35.423  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/last],methods=[GET]}" onto public iot.fei.client.CSConsumption iot.fei.controller.AccountController.getLastConsumptionForPlug(java.lang.String,java.lang.Long,java.lang.Long) throws java.lang.Exception
+2018-02-18 09:31:35.424  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}/plug/{plug-id}/between],methods=[POST]}" onto public java.util.List<iot.fei.client.CSConsumption> iot.fei.controller.AccountController.getConsumptionForPlugBetween(iot.fei.client.CSDateBetween,java.lang.String,java.lang.Long,java.lang.Long)
+2018-02-18 09:31:35.425  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/{id}/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.AccountController.getDeviceInfo(java.lang.Long,java.lang.String)
+2018-02-18 09:31:35.426  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/accounts/log-in],methods=[POST]}" onto public iot.fei.client.CSAccount iot.fei.controller.AccountController.accountLogIn(iot.fei.client.CSLogIn) throws java.lang.Exception
+2018-02-18 09:31:35.427  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[POST]}" onto public void iot.fei.controller.DeviceController.createGatheredData(java.lang.String,iot.fei.client.CSGatheredData) throws java.lang.Exception
+2018-02-18 09:31:35.427  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/devices/{device-id}],methods=[GET]}" onto public iot.fei.client.CSDeviceData iot.fei.controller.DeviceController.getDeviceData(java.lang.String)
+2018-02-18 09:31:35.431  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-02-18 09:31:35.432  INFO 2008 --- [main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-02-18 09:31:35.470  INFO 2008 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:31:35.470  INFO 2008 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:31:35.505  INFO 2008 --- [main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-02-18 09:31:35.760  INFO 2008 --- [main] o.s.j.e.a.AnnotationMBeanExporter        : Registering beans for JMX exposure on startup
+2018-02-18 09:31:35.824  INFO 2008 --- [main] s.b.c.e.t.TomcatEmbeddedServletContainer : Tomcat started on port(s): 8081 (http)
+2018-02-18 09:31:35.830  INFO 2008 --- [main] iot.fei.IotApplication                   : Started IotApplication in 5.998 seconds (JVM running for 7.098)
+2018-02-18 09:31:38.279  INFO 2008 --- [http-nio-8081-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-02-18 09:31:38.280  INFO 2008 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization started
+2018-02-18 09:31:38.297  INFO 2008 --- [http-nio-8081-exec-3] o.s.web.servlet.DispatcherServlet        : FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+2018-02-18 09:31:38.489 ERROR 2008 --- [http-nio-8081-exec-3] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.Exception: Plug 2dont have consumption or state] with root cause
+
+java.lang.Exception: Plug 2dont have consumption or state
+	at iot.fei.core.service.DeviceServiceImpl.createGatheredData(DeviceServiceImpl.java:43) ~[classes/:na]
+	at iot.fei.controller.DeviceController.createGatheredData(DeviceController.java:30) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641) [na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+
+2018-02-18 09:46:20.192 ERROR 2008 --- [http-nio-8081-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.Exception: Plug 2dont have consumption or state] with root cause
+
+java.lang.Exception: Plug 2dont have consumption or state
+	at iot.fei.core.service.DeviceServiceImpl.createGatheredData(DeviceServiceImpl.java:43) ~[classes/:na]
+	at iot.fei.controller.DeviceController.createGatheredData(DeviceController.java:30) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846) ~[spring-webmvc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52) ~[tomcat-embed-websocket-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107) ~[spring-web-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199) ~[tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:478) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1167) [na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:641) [na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-embed-core-8.5.23.jar:8.5.23]
+	at java.base/java.lang.Thread.run(Thread.java:844) [na:na]
+

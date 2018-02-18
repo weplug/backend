@@ -71,8 +71,12 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.PLUG + PathConfiguration.PLUG_ID + PathConfiguration.LAST, method = RequestMethod.GET)
-	public @ResponseBody CSConsumption getLastConsumptionForDevice(@PathVariable("device-id") String deviceId, @PathVariable("plug-id") Long plugId, @PathVariable("id") Long id) throws Exception {
+	public @ResponseBody CSConsumption getLastConsumptionForPlug(@PathVariable("device-id") String deviceId, @PathVariable("plug-id") Long plugId, @PathVariable("id") Long id) throws Exception {
 		return accountMapper.mapAsCSConsumption(accountService.getLast(deviceId, plugId));
 	}
 
+	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.PLUG + PathConfiguration.PLUG_ID + PathConfiguration.BETWEEN, method = RequestMethod.POST)
+	public @ResponseBody List<CSConsumption> getConsumptionForPlugBetween(@RequestBody CSDateBetween dateBetween ,@PathVariable("device-id") String deviceId, @PathVariable("plug-id") Long plugId, @PathVariable("id") Long id) {
+		return deviceMapper.mapAsCSConsumptionList(accountService.findConsumptionBetweenDate(deviceId, plugId, dateBetween.getFrom(), dateBetween.getTo()));
+	}
 }

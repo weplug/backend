@@ -1,5 +1,6 @@
 package iot.fei.core.service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import iot.fei.core.domain.*;
@@ -23,4 +24,6 @@ public interface AccountService {
 	Account registerDeviceToAccount(Long id, String deviceId);
 
     Consumption getLast(String deviceId, Long id) throws Exception;
+
+    List<Consumption> findConsumptionBetweenDate(String deviceId, Long plugId, LocalDateTime from, LocalDateTime to);
 }

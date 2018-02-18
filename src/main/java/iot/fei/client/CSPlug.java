@@ -14,6 +14,8 @@ public class CSPlug {
 
 	private CSPlugState plugStates = null;
 
+	private Integer plugOrder;
+
 	public CSPlug() {
 		super();
 	}
@@ -55,5 +57,21 @@ public class CSPlug {
 
 	public void setPlugStates(CSPlugState plugStates) {
 		this.plugStates = plugStates;
+	}
+
+	public List<CSConsumption> getConsumption() {
+		return consumption;
+	}
+
+	public void setConsumption(List<CSConsumption> consumption) {
+		this.consumption = consumption;
+	}
+
+	public Integer getPlugOrder() {
+		return plugOrder;
+	}
+
+	public void setPlugOrder(Integer plugOrder) {
+		this.plugOrder = plugOrder;
 	}
 }
