@@ -107,4 +107,10 @@ public class AccountServiceImpl implements AccountService {
     public List<Consumption> findConsumptionBetweenDate(String deviceId, Long plugId, LocalDateTime from, LocalDateTime to) {
         return consumptionRepository.findByPlugIdAndDateBetween(plugId, from, to);
     }
+
+	@Override
+	public List<Temperature> findTemperatureForDevice(String deviceId, Long accountId) {
+		DeviceData deviceData = deviceDataRepository.findOne(deviceId);
+		return deviceData.getTemps();
+	}
 }

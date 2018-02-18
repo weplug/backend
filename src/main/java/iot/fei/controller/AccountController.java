@@ -79,4 +79,8 @@ public class AccountController {
 	public @ResponseBody List<CSConsumption> getConsumptionForPlugBetween(@RequestBody CSDateBetween dateBetween ,@PathVariable("device-id") String deviceId, @PathVariable("plug-id") Long plugId, @PathVariable("id") Long id) {
 		return deviceMapper.mapAsCSConsumptionList(accountService.findConsumptionBetweenDate(deviceId, plugId, dateBetween.getFrom(), dateBetween.getTo()));
 	}
+
+	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.TEMPERATURE, method = RequestMethod.GET)
+	public @ResponseBody List<CSTemperature> getTemperatureForDevice(@PathVariable("device-id") String deviceId, @PathVariable("id") Long accountId) {
+		return deviceMapper.mapAsCSTemperatureList(accountService.findTemperatureForDevice(deviceId, accountId));	}
 }

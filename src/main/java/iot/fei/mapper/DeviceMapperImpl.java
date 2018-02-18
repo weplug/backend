@@ -1,16 +1,10 @@
 package iot.fei.mapper;
 
-import iot.fei.client.CSConsumption;
-import iot.fei.core.domain.Consumption;
+import iot.fei.client.*;
+import iot.fei.core.domain.*;
 import ma.glasnost.orika.converter.builtin.PassThroughConverter;
 import org.springframework.stereotype.Component;
 
-import iot.fei.client.CSDeviceData;
-import iot.fei.client.CSGatheredData;
-import iot.fei.client.CSPlug;
-import iot.fei.core.domain.DeviceData;
-import iot.fei.core.domain.GatheredData;
-import iot.fei.core.domain.Plug;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
@@ -73,5 +67,10 @@ public class DeviceMapperImpl implements DeviceMapper {
 	@Override
 	public List<CSConsumption> mapAsCSConsumptionList(List<Consumption> consumptionBetweenDate) {
 		return mapper.mapAsList(consumptionBetweenDate, CSConsumption.class);
+	}
+
+	@Override
+	public List<CSTemperature> mapAsCSTemperatureList(List<Temperature> temperatureForDevice) {
+		return mapper.mapAsList(temperatureForDevice, CSTemperature.class);
 	}
 }

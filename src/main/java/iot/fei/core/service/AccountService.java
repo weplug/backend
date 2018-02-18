@@ -26,4 +26,6 @@ public interface AccountService {
     Consumption getLast(String deviceId, Long id) throws Exception;
 
     List<Consumption> findConsumptionBetweenDate(String deviceId, Long plugId, LocalDateTime from, LocalDateTime to);
+
+	List<Temperature> findTemperatureForDevice(String deviceId, Long accountId);
 }

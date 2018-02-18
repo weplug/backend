@@ -13,4 +13,5 @@ public class PathConfiguration {
     public static final String LAST =  "/last";
 	public static final String PLUG = "/plug";
 	public static final String BETWEEN = "/between";
+	public static final String TEMPERATURE = "/temperature";
 }

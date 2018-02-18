@@ -1,13 +1,7 @@
 package iot.fei.mapper;
 
-import iot.fei.client.CSConsumption;
-import iot.fei.client.CSDeviceData;
-import iot.fei.client.CSGatheredData;
-import iot.fei.client.CSPlug;
-import iot.fei.core.domain.Consumption;
-import iot.fei.core.domain.DeviceData;
-import iot.fei.core.domain.GatheredData;
-import iot.fei.core.domain.Plug;
+import iot.fei.client.*;
+import iot.fei.core.domain.*;
 
 import java.util.List;
 
@@ -26,4 +20,6 @@ public interface DeviceMapper {
 	Plug mapPlug(CSPlug csPlug);
 
     List<CSConsumption> mapAsCSConsumptionList(List<Consumption> consumptionBetweenDate);
+
+	List<CSTemperature> mapAsCSTemperatureList(List<Temperature> temperatureForDevice);
 }
