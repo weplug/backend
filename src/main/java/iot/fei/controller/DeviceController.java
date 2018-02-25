@@ -1,5 +1,6 @@
 package iot.fei.controller;
 
+import iot.fei.client.CSDeviceDataSimple;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -31,8 +32,8 @@ public class DeviceController {
 	}
 
 	@RequestMapping(value = PathConfiguration.DEVICE_ID, method = RequestMethod.GET)
-	public @ResponseBody CSDeviceData getDeviceData(@PathVariable("device-id") String id) {
-		return deviceMapper.mapCSDeviceData(deviceService.getOptionsDataForDevice(id));
+	public @ResponseBody CSDeviceDataSimple getDeviceData(@PathVariable("device-id") String id) {
+		return deviceMapper.mapCSDeviceDataSimple(deviceService.getOptionsDataForDevice(id));
 	}
 
 }

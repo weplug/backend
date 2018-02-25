@@ -22,4 +22,6 @@ public interface DeviceMapper {
     List<CSConsumption> mapAsCSConsumptionList(List<Consumption> consumptionBetweenDate);
 
 	List<CSTemperature> mapAsCSTemperatureList(List<Temperature> temperatureForDevice);
+
+    CSDeviceDataSimple mapCSDeviceDataSimple(DeviceData optionsDataForDevice);
 }

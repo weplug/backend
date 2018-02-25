@@ -7,7 +7,6 @@ public class CSDeviceData {
 
 	private List<CSTemperature> temps = null;
 
-	private CSModes modes = null;
 
 	private List<CSPlug> plugs = null;
 
@@ -15,10 +14,9 @@ public class CSDeviceData {
 		super();
 	}
 
-	public CSDeviceData(List<CSTemperature> temps, CSModes modes, List<CSPlug> plugs) {
+	public CSDeviceData(List<CSTemperature> temps, List<CSPlug> plugs) {
 		super();
 		this.temps = temps;
-		this.modes = modes;
 		this.plugs = plugs;
 	}
 
@@ -44,14 +42,6 @@ public class CSDeviceData {
 
 	public void setTemps(List<CSTemperature> temps) {
 		this.temps = temps;
-	}
-
-	public CSModes getModes() {
-		return modes;
-	}
-
-	public void setModes(CSModes modes) {
-		this.modes = modes;
 	}
 
 }

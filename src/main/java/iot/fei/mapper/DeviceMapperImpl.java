@@ -73,4 +73,9 @@ public class DeviceMapperImpl implements DeviceMapper {
 	public List<CSTemperature> mapAsCSTemperatureList(List<Temperature> temperatureForDevice) {
 		return mapper.mapAsList(temperatureForDevice, CSTemperature.class);
 	}
+
+	@Override
+	public CSDeviceDataSimple mapCSDeviceDataSimple(DeviceData optionsDataForDevice) {
+		return mapper.map(optionsDataForDevice, CSDeviceDataSimple.class);
+	}
 }
