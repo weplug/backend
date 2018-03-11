@@ -3,21 +3,21 @@ package iot.fei.core.domain;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 
 @Entity
 // @NamedQuery(name = "DeviceData.findByAccoundId", query = "SELECT p FROM
 // Person p WHERE LOWER(p.lastName) = LOWER(?1)")
 public class DeviceData {
 	@Id
-	@Column
+	@Column(unique = true)
 	String id;
+
+	@Column
+	private String name = "Default";
+
+	@Column
+	private String note = null;
 
 	@OneToMany(mappedBy = "device", cascade = CascadeType.ALL)
 	private List<Plug> plugs = new ArrayList<Plug>();
@@ -72,4 +72,19 @@ public class DeviceData {
 		this.temps = temps;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
 }

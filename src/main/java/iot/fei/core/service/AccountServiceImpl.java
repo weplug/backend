@@ -49,6 +49,11 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public boolean deleteAccount(Long id) {
+		Account account = accountRepository.findOne(id);
+		for(DeviceData deviceData : account.getDevices()){
+			deviceData.setAccount(null);
+			deviceDataRepository.save(deviceData);
+		}
 		accountRepository.delete(id);
 		return true;
 	}
@@ -56,6 +61,33 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public DeviceData getDeviceData(Long id, String deviceId) {
 		return deviceDataRepository.findOne(deviceId);
+	}
+
+	@Override
+	public DeviceData updateDeviceData(Long id, String deviceId, DeviceData deviceData) throws Exception {
+		DeviceData deviceDataLoaded = deviceDataRepository.findOne(deviceId);
+		if(deviceData == null) {
+			throw new Exception("device not found");
+		}
+		deviceDataLoaded.setName(deviceData.getName());
+		deviceDataLoaded.setNote(deviceData.getNote());
+		return deviceDataRepository.save(deviceDataLoaded);
+	}
+
+	@Override
+	public Account removeDeviceToAccount(Long id, String deviceId) throws Exception {
+		DeviceData device = deviceDataRepository.findOne(deviceId);
+		if(device.getAccount().getId() == id) {
+			device.setAccount(null);
+			deviceDataRepository.save(device);
+		}
+		else
+			throw new Exception("you are trying delete device from different account");
+		Account account = accountRepository.findOne(id);
+		if (account == null) {
+			throw new Exception("account not found");
+		}
+		return account;
 	}
 
 	@Override
@@ -72,23 +104,18 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
-	public Account registerDeviceToAccount(Long id, String deviceId) {
+	public Account registerDeviceToAccount(Long id, String deviceId) throws Exception {
 		Account account = accountRepository.findOne(id);
-		DeviceData device = new DeviceData();
-		device.setAccount(account);
-		device.setId(deviceId);
-		List<Plug> plugs = new ArrayList<>();
-
-		for (int i = 0; i < 3; i++) {
-			Plug plug = new Plug();
-			plug.setPlugOrder(i);
-			plug.setDevice(device);
-			plug.setModes(new Modes());
-			plugs.add(plug);
+		if (account == null) {
+			throw new Exception("account not found");
 		}
-		device.setPlugs(plugs);
-		account.getDevices().add(device);
-		// deviceDataRepository.save(device);
+		DeviceData device = deviceDataRepository.findOne(deviceId);
+		if(device == null) {
+			throw new Exception("device not found");
+		}
+		device.setAccount(account);
+//		account.getDevices().add(device);
+		deviceDataRepository.save(device);
 		return accountRepository.save(account);
 	}
 

@@ -7,6 +7,9 @@ public class CSDeviceData {
 
 	private List<CSTemperature> temps = null;
 
+	private String name = "Default";
+
+	private String note = null;
 
 	private List<CSPlug> plugs = null;
 
@@ -44,4 +47,19 @@ public class CSDeviceData {
 		this.temps = temps;
 	}
 
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
 }

@@ -1,16 +1,13 @@
 package iot.fei.core.service;
 
+import iot.fei.core.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import iot.fei.core.domain.Consumption;
-import iot.fei.core.domain.DeviceData;
-import iot.fei.core.domain.GatheredData;
-import iot.fei.core.domain.Plug;
-import iot.fei.core.domain.Temperature;
 import iot.fei.core.repository.DeviceDataRepository;
 import iot.fei.core.repository.PlugRepository;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -44,5 +41,19 @@ public class DeviceServiceImpl implements DeviceService {
 			}
 		}
 		plugRepository.save(data.getPlugs());
+	}
+
+	@Override
+	public DeviceData createDeviceData(DeviceData deviceData) {
+		List<Plug> plugs = new ArrayList<>();
+		for (int i = 0; i < 3; i++) {
+			Plug plug = new Plug();
+			plug.setPlugOrder(i);
+			plug.setDevice(deviceData);
+			plug.setModes(new Modes());
+			plugs.add(plug);
+		}
+		deviceData.setPlugs(plugs);
+		return  deviceDataRepository.save(deviceData);
 	}
 }

@@ -8,4 +8,6 @@ public interface DeviceService {
 	DeviceData getOptionsDataForDevice(String id);
 
 	void createGatheredData(GatheredData mapGatheredData, String id) throws Exception;
+
+    DeviceData createDeviceData(DeviceData deviceData);
 }

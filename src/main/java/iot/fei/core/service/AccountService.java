@@ -21,11 +21,15 @@ public interface AccountService {
 
 	List<String> getDeviceListForAccount(Long id);
 
-	Account registerDeviceToAccount(Long id, String deviceId);
+	Account registerDeviceToAccount(Long id, String deviceId) throws Exception;
 
     Consumption getLast(String deviceId, Long id) throws Exception;
 
     List<Consumption> findConsumptionBetweenDate(String deviceId, Long plugId, LocalDateTime from, LocalDateTime to);
 
 	List<Temperature> findTemperatureForDevice(String deviceId, Long accountId);
+
+    DeviceData updateDeviceData(Long id, String deviceId,DeviceData deviceData) throws Exception;
+
+	Account removeDeviceToAccount(Long id, String deviceId) throws Exception;
 }

@@ -2,6 +2,7 @@ package iot.fei.client;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
@@ -15,6 +16,11 @@ public class CSPlug {
 	private CSPlugState plugStates = null;
 
 	private Integer plugOrder;
+
+	private String name = "Default";
+
+	private String note = null;
+
 
 	public CSPlug() {
 		super();
@@ -73,5 +79,21 @@ public class CSPlug {
 
 	public void setPlugOrder(Integer plugOrder) {
 		this.plugOrder = plugOrder;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
 	}
 }

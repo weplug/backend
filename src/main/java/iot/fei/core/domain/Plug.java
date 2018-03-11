@@ -22,6 +22,12 @@ public class Plug {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	Long id;
 
+	@Column
+	private String name = "Default";
+
+	@Column
+	private String note = null;
+
 	@OneToOne(cascade = CascadeType.ALL)
 	private Modes modes = null;
 
@@ -43,15 +49,6 @@ public class Plug {
 	public Plug() {
 		super();
 	}
-
-	// public Plug(Modes modes, List<Consumption> eConsumption, PlugState
-	// plugStates, DeviceData device) {
-	// super();
-	// this.modes = modes;
-	// this.eConsumption = eConsumption;
-	// this.plugStates = plugStates;
-	// this.device = device;
-	// }
 
 	public Long getId() {
 		return id;
@@ -99,5 +96,21 @@ public class Plug {
 
 	public void setPlugOrder(Integer plugOrder) {
 		this.plugOrder = plugOrder;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
 	}
 }

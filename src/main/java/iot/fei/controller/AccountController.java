@@ -55,6 +55,11 @@ public class AccountController {
 		return deviceMapper.mapCSDeviceData(accountService.getDeviceData(id, deviceId));
 	}
 
+	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID, method = RequestMethod.PUT)
+	public @ResponseBody CSDeviceData updateDeviceInfo(@PathVariable("id") Long id, @PathVariable("device-id") String deviceId, @RequestBody CSDeviceData deviceData) throws Exception {
+		return deviceMapper.mapCSDeviceData(accountService.updateDeviceData(id, deviceId, deviceMapper.mapDeviceData(deviceData)));
+	}
+
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID, method = RequestMethod.POST)
 	public @ResponseBody CSPlug setOptionsForPlug(@PathVariable("id") Long id, @PathVariable("device-id") String deviceId, @RequestBody CSPlug plug) {
 		return deviceMapper.mapCSPlug(accountService.setOptionsForPlug(deviceMapper.mapPlug(plug)));
@@ -66,8 +71,13 @@ public class AccountController {
 	}
 
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.REGISTER, method = RequestMethod.POST)
-	public @ResponseBody CSAccount registerDeviceForAccount(@PathVariable("id") Long id, @PathVariable("device-id") String deviceId) {
+	public @ResponseBody CSAccount registerDeviceForAccount(@PathVariable("id") Long id, @PathVariable("device-id") String deviceId) throws Exception {
 		return accountMapper.mapAsCSAccount(accountService.registerDeviceToAccount(id, deviceId));
+	}
+
+	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID, method = RequestMethod.DELETE)
+	public @ResponseBody CSAccount removeDeviceForAccount(@PathVariable("id") Long id, @PathVariable("device-id") String deviceId) throws Exception {
+		return accountMapper.mapAsCSAccount(accountService.removeDeviceToAccount(id, deviceId));
 	}
 
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.PLUG + PathConfiguration.PLUG_ID + PathConfiguration.LAST, method = RequestMethod.GET)
