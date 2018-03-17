@@ -10,6 +10,7 @@ import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
 
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Component
@@ -18,6 +19,7 @@ public class DeviceMapperImpl implements DeviceMapper {
 
 	static {
 		final MapperFactory mapperFactory = new DefaultMapperFactory.Builder().build();
+		mapperFactory.getConverterFactory().registerConverter(new PassThroughConverter(LocalTime.class));
 		mapperFactory.getConverterFactory().registerConverter(new PassThroughConverter(LocalDateTime.class));
 		mapperFactory.classMap(DeviceData.class, CSDeviceData.class) //
 				.byDefault() //
@@ -28,6 +30,10 @@ public class DeviceMapperImpl implements DeviceMapper {
 				.register();
 		
 		mapperFactory.classMap(Plug.class, CSPlug.class) //
+				.byDefault() //
+				.register();
+
+		mapperFactory.classMap(Timer.class, CSTimer.class) //
 				.byDefault() //
 				.register();
 
@@ -77,5 +83,15 @@ public class DeviceMapperImpl implements DeviceMapper {
 	@Override
 	public CSDeviceDataSimple mapCSDeviceDataSimple(DeviceData optionsDataForDevice) {
 		return mapper.map(optionsDataForDevice, CSDeviceDataSimple.class);
+	}
+
+	@Override
+	public Timer mapTimer(CSTimer timer) {
+		return mapper.map(timer, Timer.class);
+	}
+
+	@Override
+	public CSTimer mapCSTimer(Timer timer) {
+		return mapper.map(timer, CSTimer.class);
 	}
 }

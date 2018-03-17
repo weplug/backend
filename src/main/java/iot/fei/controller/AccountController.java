@@ -65,6 +65,16 @@ public class AccountController {
 		return deviceMapper.mapCSPlug(accountService.setOptionsForPlug(deviceMapper.mapPlug(plug)));
 	}
 
+	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.PLUG + PathConfiguration.PLUG_ID + PathConfiguration.TIMER, method = RequestMethod.POST)
+	public @ResponseBody CSTimer setTimerForPlug(@PathVariable("id") Long accountId, @PathVariable("device-id") String deviceId, @PathVariable("plug-id") Long plugId, @RequestBody CSTimer timer) throws Exception {
+		return deviceMapper.mapCSTimer(accountService.setTimerForPlug(deviceMapper.mapTimer(timer), deviceId, accountId, plugId));
+	}
+
+	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.PLUG + PathConfiguration.PLUG_ID + PathConfiguration.TIMER, method = RequestMethod.DELETE)
+	public @ResponseBody boolean deleteTimerForPlug(@PathVariable("id") Long accountId, @PathVariable("device-id") String deviceId, @PathVariable("plug-id") Long plugId, @RequestBody CSTimer timer) throws Exception {
+		return accountService.deleteTimerForPlug(timer.getId(), deviceId, accountId, plugId);
+	}
+
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES, method = RequestMethod.GET)
 	public @ResponseBody List<String> getAccountDeviceList(@PathVariable("id") Long id) {
 		return accountService.getDeviceListForAccount(id);
@@ -92,5 +102,11 @@ public class AccountController {
 
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.TEMPERATURE, method = RequestMethod.GET)
 	public @ResponseBody List<CSTemperature> getTemperatureForDevice(@PathVariable("device-id") String deviceId, @PathVariable("id") Long accountId) {
-		return deviceMapper.mapAsCSTemperatureList(accountService.findTemperatureForDevice(deviceId, accountId));	}
+		return deviceMapper.mapAsCSTemperatureList(accountService.findTemperatureForDevice(deviceId, accountId));
+	}
+
+	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.TEMPERATURE + PathConfiguration.BETWEEN, method = RequestMethod.POST)
+	public @ResponseBody List<CSTemperature> getTemperatureForDeviceBetween(@RequestBody CSDateBetween dateBetween, @PathVariable("device-id") String deviceId, @PathVariable("id") Long accountId) {
+		return deviceMapper.mapAsCSTemperatureList(accountService.findTemperatureForDeviceBetween(dateBetween, deviceId, accountId));
+	}
 }

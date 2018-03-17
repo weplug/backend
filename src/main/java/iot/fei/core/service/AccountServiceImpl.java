@@ -4,14 +4,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import iot.fei.client.CSDateBetween;
 import iot.fei.core.domain.*;
-import iot.fei.core.repository.ConsumptionRepository;
+import iot.fei.core.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import iot.fei.core.repository.AccountRepository;
-import iot.fei.core.repository.DeviceDataRepository;
-import iot.fei.core.repository.PlugRepository;
 
 @Component
 public class AccountServiceImpl implements AccountService {
@@ -27,6 +24,12 @@ public class AccountServiceImpl implements AccountService {
 
 	@Autowired
     ConsumptionRepository consumptionRepository;
+
+	@Autowired
+	TemperatureRepository temperatureRepository;
+
+	@Autowired
+	TimerRepository timerRepository;
 
 	@Override
 	public Account createAccount(Account account) {
@@ -91,16 +94,37 @@ public class AccountServiceImpl implements AccountService {
 	}
 
 	@Override
+	public List<Temperature> findTemperatureForDeviceBetween(CSDateBetween dateBetween, String deviceId, Long accountId) {
+		return temperatureRepository.findByDeviceIdAndTimeBetween(deviceId, dateBetween.getFrom(), dateBetween.getTo());
+	}
+
+	@Override
+	public Timer setTimerForPlug(Timer timer, String deviceId, Long accountId, Long plugId) throws Exception {
+		Plug plug = plugRepository.findOne(plugId);
+		if(plug == null) {
+			throw new Exception("plug not found");
+		}
+		timer.setModes(plug.getModes());
+		return timerRepository.save(timer);
+	}
+
+    @Override
+    public boolean deleteTimerForPlug(Long id, String deviceId, Long accountId, Long plugId) {
+        timerRepository.delete(id);
+        return true;
+    }
+
+    @Override
 	public Plug setOptionsForPlug(Plug plug) {
 		Plug oldPlug = plugRepository.findOne(plug.getId());
 		plug.setDevice(oldPlug.getDevice());
+		plug.getModes().setTimers(oldPlug.getModes().getTimers());
 		return plugRepository.save(plug);
 	}
 
 	@Override
 	public List<String> getDeviceListForAccount(Long id) {
-		List<String> var = deviceDataRepository.findIdByAccountId(id);
-		return var;
+		return deviceDataRepository.findIdByAccountId(id);
 	}
 
 	@Override

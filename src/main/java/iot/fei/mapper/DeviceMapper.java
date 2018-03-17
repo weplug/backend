@@ -24,4 +24,8 @@ public interface DeviceMapper {
 	List<CSTemperature> mapAsCSTemperatureList(List<Temperature> temperatureForDevice);
 
     CSDeviceDataSimple mapCSDeviceDataSimple(DeviceData optionsDataForDevice);
+
+	Timer mapTimer(CSTimer timers);
+
+	CSTimer mapCSTimer(Timer timer);
 }

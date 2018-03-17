@@ -1,6 +1,7 @@
 package iot.fei.client;
 
 import javax.persistence.Entity;
+import java.util.List;
 
 @Entity
 public class CSModes {
@@ -8,7 +9,7 @@ public class CSModes {
 
 	private Boolean manual = null;
 
-	private CSTimers timers = null;
+	private List<CSTimer> timers = null;
 
 	private CSModesLight light = null;
 
@@ -18,10 +19,9 @@ public class CSModes {
 		super();
 	}
 
-	public CSModes(Boolean manual, CSTimers timers, CSModesLight light, boolean move_sensor) {
+	public CSModes(Boolean manual, CSModesLight light, boolean move_sensor) {
 		super();
 		this.manual = manual;
-		this.timers = timers;
 		this.light = light;
 		this.move_sensor = move_sensor;
 	}
@@ -46,16 +46,16 @@ public class CSModes {
 		return manual;
 	}
 
-	public void setManual(Boolean manual) {
-		this.manual = manual;
-	}
-
-	public CSTimers getTimers() {
+	public List<CSTimer> getTimers() {
 		return timers;
 	}
 
-	public void setTimers(CSTimers timers) {
+	public void setTimers(List<CSTimer> timers) {
 		this.timers = timers;
+	}
+
+	public void setManual(Boolean manual) {
+		this.manual = manual;
 	}
 
 	public CSModesLight getLight() {

@@ -1,13 +1,8 @@
 package iot.fei.core.domain;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Modes {
@@ -18,8 +13,8 @@ public class Modes {
 	@Column
 	private Boolean manual = true;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	private Timers timers = new Timers();
+	@OneToMany(mappedBy = "modes", cascade = CascadeType.ALL)
+	private List<Timer> timers = new ArrayList<>();
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private ModesLight light = null;
@@ -35,10 +30,9 @@ public class Modes {
 		super();
 	}
 
-	public Modes(Boolean manual, Timers timers, ModesLight light, boolean move_sensor) {
+	public Modes(Boolean manual, ModesLight light, boolean move_sensor) {
 		super();
 		this.manual = manual;
-		this.timers = timers;
 		this.light = light;
 		this.move_sensor = move_sensor;
 	}
@@ -75,11 +69,11 @@ public class Modes {
 		this.manual = manual;
 	}
 
-	public Timers getTimers() {
+	public List<Timer> getTimers() {
 		return timers;
 	}
 
-	public void setTimers(Timers timers) {
+	public void setTimers(List<Timer> timers) {
 		this.timers = timers;
 	}
 
