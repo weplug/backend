@@ -2,6 +2,7 @@ package iot.fei.mapper;
 
 import iot.fei.client.CSConsumption;
 import iot.fei.core.domain.Consumption;
+import ma.glasnost.orika.converter.builtin.PassThroughConverter;
 import org.springframework.stereotype.Component;
 
 import iot.fei.client.CSAccount;
@@ -13,6 +14,9 @@ import iot.fei.core.domain.Plug;
 import ma.glasnost.orika.MapperFacade;
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.impl.DefaultMapperFactory;
+
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Component
 public class AccountMapperImpl implements AccountMapper {
@@ -33,7 +37,9 @@ public class AccountMapperImpl implements AccountMapper {
 				.register();
 
 		// TODO nevyriesene mapovanie casu
-		mapperFactory.getConverterFactory().registerConverter(new LocalDateConverter());
+//		mapperFactory.getConverterFactory().registerConverter(new LocalDateConverter());
+		mapperFactory.getConverterFactory().registerConverter(new PassThroughConverter(LocalTime.class));
+		mapperFactory.getConverterFactory().registerConverter(new PassThroughConverter(LocalDateTime.class));
 
 		mapper = mapperFactory.getMapperFacade();
 	}
