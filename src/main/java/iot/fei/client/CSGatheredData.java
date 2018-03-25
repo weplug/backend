@@ -13,6 +13,8 @@ public class CSGatheredData {
 
 	private List<CSPlugState> plugStates = null;
 
+	private Integer version = null;
+
 	public CSGatheredData() {
 		super();
 	}
@@ -65,4 +67,11 @@ public class CSGatheredData {
 		this.plugStates = plugStates;
 	}
 
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
 }

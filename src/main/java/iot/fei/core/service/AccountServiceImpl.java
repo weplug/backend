@@ -101,6 +101,7 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public Timer setTimerForPlug(Timer timer, String deviceId, Long accountId, Long plugId) throws Exception {
 		Plug plug = plugRepository.findOne(plugId);
+		setVersion(plug);
 		if(plug == null) {
 			throw new Exception("plug not found");
 		}
@@ -117,9 +118,18 @@ public class AccountServiceImpl implements AccountService {
     @Override
 	public Plug setOptionsForPlug(Plug plug) {
 		Plug oldPlug = plugRepository.findOne(plug.getId());
+		setVersion(oldPlug);
 		plug.setDevice(oldPlug.getDevice());
 		plug.getModes().setTimers(oldPlug.getModes().getTimers());
+		plug.setPlugOrder(oldPlug.getPlugOrder());
 		return plugRepository.save(plug);
+	}
+
+	private void setVersion(Plug plug) {
+		DeviceData deviceData = deviceDataRepository.findOne(plug.getDevice().getId());
+		if(deviceData.getVersion() == null)
+			deviceData.setVersion(0);
+		deviceData.setVersion(deviceData.getVersion()+1);
 	}
 
 	@Override

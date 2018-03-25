@@ -19,6 +19,9 @@ public class DeviceData {
 	@Column
 	private String note = null;
 
+	@Column
+	private Integer version = 0;
+
 	@OneToMany(mappedBy = "device", cascade = CascadeType.ALL)
 	private List<Plug> plugs = new ArrayList<Plug>();
 
@@ -86,5 +89,13 @@ public class DeviceData {
 
 	public void setNote(String note) {
 		this.note = note;
+	}
+
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
 	}
 }

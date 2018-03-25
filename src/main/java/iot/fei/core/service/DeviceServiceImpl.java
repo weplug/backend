@@ -8,7 +8,6 @@ import iot.fei.core.repository.DeviceDataRepository;
 import iot.fei.core.repository.PlugRepository;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 @Component
@@ -25,7 +24,7 @@ public class DeviceServiceImpl implements DeviceService {
 	}
 
 	@Override
-	public void createGatheredData(GatheredData gatheredDatas, String id) throws Exception {
+	public DeviceData createGatheredData(GatheredData gatheredDatas, String id) throws Exception {
 		DeviceData data = deviceDataRepository.findOne(id);
 		Temperature temperature = new Temperature(gatheredDatas.getTemp());
 		data.getTemps().add(temperature);
@@ -41,16 +40,20 @@ public class DeviceServiceImpl implements DeviceService {
 			}
 		}
 		plugRepository.save(data.getPlugs());
+		if(gatheredDatas.getVersion() != data.getVersion())
+			return  data;
+		return null;
 	}
 
 	@Override
 	public DeviceData createDeviceData(DeviceData deviceData) {
 		List<Plug> plugs = new ArrayList<>();
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < 4; i++) {
 			Plug plug = new Plug();
 			plug.setPlugOrder(i);
 			plug.setDevice(deviceData);
 			plug.setModes(new Modes());
+			plug.setPlugStates(PlugState.OFF);
 			plugs.add(plug);
 		}
 		deviceData.setPlugs(plugs);

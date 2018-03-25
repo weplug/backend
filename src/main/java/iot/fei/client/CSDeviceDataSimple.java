@@ -8,6 +8,8 @@ public class CSDeviceDataSimple {
 
 	private List<CSPlugSimple> plugs = null;
 
+	private Integer version = null;
+
 	public CSDeviceDataSimple() {
 		super();
 	}
@@ -31,5 +33,13 @@ public class CSDeviceDataSimple {
 
 	public void setPlugs(List<CSPlugSimple> plugs) {
 		this.plugs = plugs;
+	}
+
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
 	}
 }

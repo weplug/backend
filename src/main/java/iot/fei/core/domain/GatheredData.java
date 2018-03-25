@@ -11,6 +11,8 @@ public class GatheredData {
 
 	private List<PlugState> plugStates = null;
 
+	private Integer version = null;
+
 	public GatheredData() {
 		super();
 	}
@@ -55,4 +57,11 @@ public class GatheredData {
 		this.plugStates = plugStates;
 	}
 
+	public Integer getVersion() {
+		return version;
+	}
+
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
 }
