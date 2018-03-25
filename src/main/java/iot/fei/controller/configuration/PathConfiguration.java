@@ -15,4 +15,5 @@ public class PathConfiguration {
 	public static final String BETWEEN = "/between";
 	public static final String TEMPERATURE = "/temperature";
 	public static final String TIMER = "/timer";
+    public static final String INFO = "/info";
 }
