@@ -30,13 +30,15 @@ public class DeviceServiceImpl implements DeviceService {
 		data.getTemps().add(temperature);
 		temperature.setDevice(data);
 		for(Plug plug: data.getPlugs()) {
-			if(plug.getPlugOrder() < gatheredDatas.geteConsumption().size()) {
-				Consumption consumption = new Consumption(gatheredDatas.geteConsumption().get(plug.getPlugOrder()));
-				consumption.setPlug(plug);
-				data.getPlugs().get(plug.getPlugOrder()).geteConsumption().add(consumption);
-				data.getPlugs().get(plug.getPlugOrder()).setPlugStates(gatheredDatas.getPlugStates().get(plug.getPlugOrder()));
-			} else {
-				throw new Exception("Plug " + plug.getPlugOrder() + "dont have consumption or state");
+			if(plug.getPlugOrder() != 3) { // last plug doesnt have sensors
+				if (plug.getPlugOrder() < gatheredDatas.geteConsumption().size()) {
+					Consumption consumption = new Consumption(gatheredDatas.geteConsumption().get(plug.getPlugOrder()));
+					consumption.setPlug(plug);
+					data.getPlugs().get(plug.getPlugOrder()).geteConsumption().add(consumption);
+					data.getPlugs().get(plug.getPlugOrder()).setPlugStates(gatheredDatas.getPlugStates().get(plug.getPlugOrder()));
+				} else {
+					throw new Exception("Plug " + plug.getPlugOrder() + "dont have consumption or state");
+				}
 			}
 		}
 		plugRepository.save(data.getPlugs());

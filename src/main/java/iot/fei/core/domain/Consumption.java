@@ -2,15 +2,10 @@ package iot.fei.core.domain;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import iot.fei.core.config.LocalDateConverter;
 
 @Entity
 public class Consumption {
@@ -23,6 +18,7 @@ public class Consumption {
 
 	@Column
 	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	@Convert(converter = LocalDateConverter.class)
 	LocalDateTime date = LocalDateTime.now();
 
 	@ManyToOne

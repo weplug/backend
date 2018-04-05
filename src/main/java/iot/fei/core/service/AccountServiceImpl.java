@@ -3,6 +3,7 @@ package iot.fei.core.service;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 import iot.fei.client.CSDateBetween;
 import iot.fei.core.domain.*;
@@ -156,12 +157,10 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public Consumption getLast(String deviceId, Long id) throws Exception {
         List<Plug> plugList = deviceDataRepository.findOne(deviceId).getPlugs();
-        Plug plug = plugList.stream().filter(e -> e.getId() == id).findFirst().get();
-        if(plug != null) {
-            return consumptionRepository.findFirstByPlugIdOrderByDateDesc(plug.getId());
-        } else {
-            throw new Exception("Plug ID is not in Device");
-        }
+		for(Plug plug : plugList)
+			if(plug.getId() == id)
+            	return consumptionRepository.findFirstByPlugIdOrderByDateDesc(plug.getId());
+		throw new Exception("Plug ID is not in Device");
 	}
 
     @Override

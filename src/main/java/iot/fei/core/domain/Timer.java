@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import iot.fei.core.config.LocalTimeConverter;
 
 @Entity
 public class Timer {
@@ -17,10 +18,12 @@ public class Timer {
 
 	@Column
 	@JsonFormat(pattern = "HH:mm:ss")
+	@Convert(converter = LocalTimeConverter.class)
 	private LocalTime startTime;
 
 	@Column
 	@JsonFormat(pattern = "HH:mm:ss")
+	@Convert(converter = LocalTimeConverter.class)
 	private LocalTime stopTime;
 
 	@Column
