@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.List;
 
 public interface ConsumptionRepository extends CrudRepository<Consumption, Long> {
-    List<Consumption> findByPlugIdAndDateBetween(Long id, LocalDateTime from, LocalDateTime to);
+    List<Consumption> findByPlugIdAndDateBetweenOrderByDate(Long id, LocalDateTime from, LocalDateTime to);
 
     Consumption findFirstByPlugIdOrderByDateDesc(Long id);
 }

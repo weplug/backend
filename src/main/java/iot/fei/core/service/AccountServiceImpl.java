@@ -183,7 +183,13 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public List<Consumption> findConsumptionBetweenDate(String deviceId, Long plugId, LocalDateTime from, LocalDateTime to) {
-        return consumptionRepository.findByPlugIdAndDateBetween(plugId, from, to);
+		List<Consumption> consumptions = consumptionRepository.findByPlugIdAndDateBetweenOrderByDate(plugId, from, to);
+		Float cumulator = 0f; //kazda dalsia hodnota predstavuje postupne sa zvysujucu consumption
+		for(Consumption con : consumptions) {
+			cumulator += con.getConsume();
+			con.setConsume(cumulator);
+		}
+		return consumptions;
     }
 
 	@Override
