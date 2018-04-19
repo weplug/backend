@@ -70,6 +70,11 @@ public class AccountController {
 		return deviceMapper.mapCSTimer(accountService.setTimerForPlug(deviceMapper.mapTimer(timer), deviceId, accountId, plugId));
 	}
 
+	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.PLUG + PathConfiguration.PLUG_ID + PathConfiguration.TIMER, method = RequestMethod.GET)
+	public @ResponseBody List<CSTimer> getTimersForPlug(@PathVariable("id") Long accountId, @PathVariable("device-id") String deviceId, @PathVariable("plug-id") Long plugId) throws Exception {
+		return deviceMapper.mapAsCSTimersList(accountService.getTimersForPlug(deviceId, accountId, plugId));
+	}
+
 	@RequestMapping(value = PathConfiguration.ID + PathConfiguration.DEVICES + PathConfiguration.DEVICE_ID + PathConfiguration.PLUG + PathConfiguration.PLUG_ID + PathConfiguration.TIMER, method = RequestMethod.DELETE)
 	public @ResponseBody boolean deleteTimerForPlug(@PathVariable("id") Long accountId, @PathVariable("device-id") String deviceId, @PathVariable("plug-id") Long plugId, @RequestBody CSTimer timer) throws Exception {
 		return accountService.deleteTimerForPlug(timer.getId(), deviceId, accountId, plugId);

@@ -8,20 +8,6 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Component
-/*
-@Converter(autoApply = true)
-public class LocalDateAttributeConverter implements AttributeConverter<LocalDate, Date> {
-
-    @Override
-    public Date convertToDatabaseColumn(LocalDate locDate) {
-    	return (locDate == null ? null : Date.valueOf(locDate));
-    }
-
-    @Override
-    public LocalDate convertToEntityAttribute(Date sqlDate) {
-    	return (sqlDate == null ? null : sqlDate.toLocalDate());
-    }
-}*/
 @Converter(autoApply = true)
 public class LocalDateConverter implements AttributeConverter<LocalDateTime, Timestamp> {
 

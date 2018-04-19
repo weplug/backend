@@ -1,5 +1,6 @@
 package iot.fei.core.service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -106,8 +107,25 @@ public class AccountServiceImpl implements AccountService {
 		if(plug == null) {
 			throw new Exception("plug not found");
 		}
+		if(!timer.getRepeat())
+			timer.setDate(LocalDate.now());
 		timer.setModes(plug.getModes());
 		return timerRepository.save(timer);
+	}
+
+	@Override
+	public List<Timer> getTimersForPlug(String deviceId, Long accountId, Long plugId) throws Exception {
+		Plug plug = plugRepository.findOne(plugId);
+		if(plug == null) {
+			throw new Exception("timers not found");
+		}
+		List<Timer> timers = new ArrayList<>();
+		for (Timer timer : plug.getModes().getTimers()) {
+			if(timer.getDate() == null || timer.getDate().isAfter(LocalDate.now().minusDays(1))) {
+				timers.add(timer);
+			}
+		}
+		return timers;
 	}
 
     @Override

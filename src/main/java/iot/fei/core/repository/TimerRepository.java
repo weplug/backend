@@ -4,6 +4,7 @@ import iot.fei.core.domain.Temperature;
 import iot.fei.core.domain.Timer;
 import org.springframework.data.repository.CrudRepository;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 

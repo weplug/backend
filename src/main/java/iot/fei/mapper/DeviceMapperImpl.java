@@ -94,4 +94,9 @@ public class DeviceMapperImpl implements DeviceMapper {
 	public CSTimer mapCSTimer(Timer timer) {
 		return mapper.map(timer, CSTimer.class);
 	}
+
+	@Override
+	public List<CSTimer> mapAsCSTimersList(List<Timer> timers) {
+		return mapper.mapAsList(timers, CSTimer.class);
+	}
 }

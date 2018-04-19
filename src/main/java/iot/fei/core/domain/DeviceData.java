@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Entity
 // @NamedQuery(name = "DeviceData.findByAccoundId", query = "SELECT p FROM
 // Person p WHERE LOWER(p.lastName) = LOWER(?1)")
-public class DeviceData {
+public class DeviceData{
 	@Id
 	@Column(unique = true)
 	String id;

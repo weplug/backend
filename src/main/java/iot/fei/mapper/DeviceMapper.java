@@ -28,4 +28,6 @@ public interface DeviceMapper {
 	Timer mapTimer(CSTimer timers);
 
 	CSTimer mapCSTimer(Timer timer);
+
+    List<CSTimer> mapAsCSTimersList(List<Timer> timers);
 }

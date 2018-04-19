@@ -1,13 +1,16 @@
 package iot.fei.core.domain;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import iot.fei.core.config.DateConverter;
 import iot.fei.core.config.LocalTimeConverter;
 
 @Entity
@@ -25,6 +28,11 @@ public class Timer {
 	@JsonFormat(pattern = "HH:mm:ss")
 	@Convert(converter = LocalTimeConverter.class)
 	private LocalTime stopTime;
+
+	@Column
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	@Convert(converter = DateConverter.class)
+	private LocalDate date;
 
 	@Column
 	private Integer dayInWeek;
@@ -82,5 +90,13 @@ public class Timer {
 
 	public void setModes(Modes modes) {
 		this.modes = modes;
+	}
+
+	public LocalDate getDate() {
+		return date;
+	}
+
+	public void setDate(LocalDate date) {
+		this.date = date;
 	}
 }

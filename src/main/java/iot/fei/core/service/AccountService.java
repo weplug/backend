@@ -38,5 +38,7 @@ public interface AccountService {
 
 	Timer setTimerForPlug(Timer timer, String deviceId, Long accountId,Long plugId) throws Exception;
 
-    boolean deleteTimerForPlug(Long id, String deviceId, Long accountId, Long plugId);
+	List<Timer> getTimersForPlug(String deviceId, Long accountId, Long plugId) throws Exception;
+
+	boolean deleteTimerForPlug(Long id, String deviceId, Long accountId, Long plugId);
 }
