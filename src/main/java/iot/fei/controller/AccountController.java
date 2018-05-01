@@ -17,7 +17,7 @@ import iot.fei.core.service.AccountService;
 import iot.fei.mapper.AccountMapper;
 import iot.fei.mapper.DeviceMapper;
 
-@CrossOrigin
+	@CrossOrigin
 @Controller
 @RequestMapping("/accounts")
 public class AccountController {

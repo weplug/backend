@@ -186,7 +186,7 @@ public class AccountServiceImpl implements AccountService {
 		List<Consumption> consumptions = consumptionRepository.findByPlugIdAndDateBetweenOrderByDate(plugId, from, to);
 		Float cumulator = 0f; //kazda dalsia hodnota predstavuje postupne sa zvysujucu consumption
 		for(Consumption con : consumptions) {
-			cumulator += con.getConsume();
+			cumulator += con.getConsume() / 3600; //delene 3600 aby sme ziskali pocet za hodinu
 			con.setConsume(cumulator);
 		}
 		return consumptions;
